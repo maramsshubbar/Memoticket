@@ -1,0 +1,16 @@
+/* Font from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Universal Styles */
+*{
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body positioning to make sure it stacks cleanly */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
