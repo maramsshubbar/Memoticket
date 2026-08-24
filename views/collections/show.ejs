@@ -2,13 +2,45 @@
 
 <p><%= collection.description %></p>
 
-<a href="/collections/<%= collection._id %>/edit">Edit Collection</a>
+<a href="/collections/<%= collection._id %>/edit">
+  Edit Collection
+</a>
 
 <br>
 
-<form action="/collections/<%= collection._id %>?_method=DELETE" method="POST">
+<form
+  action="/collections/<%= collection._id %>?_method=DELETE"
+  method="POST"
+>
   <button type="submit">Delete Collection</button>
 </form>
+
+<br>
+
+<h2>Memories</h2>
+
+<a href="/collections/<%= collection._id %>/memories/new">
+  Add Memory
+</a>
+
+<% if (memories.length > 0) { %>
+
+  <ul>
+    <% memories.forEach(memory => { %>
+
+      <li>
+        <h3><%= memory.title %></h3>
+        <p><%= memory.description %></p>
+      </li>
+
+    <% }) %>
+  </ul>
+
+<% } else { %>
+
+  <p>No memories yet.</p>
+
+<% } %>
 
 <br>
 

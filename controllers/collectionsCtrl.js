@@ -13,8 +13,15 @@ const index = async (req, res) => {
 const show = async (req, res) => {
   const collection = await Collection.findById(req.params.id);
 
+  const Memory = require('../models/memory');
+
+  const memories = await Memory.find({
+    collection: req.params.id,
+  });
+
   res.render('collections/show.ejs', {
     collection,
+    memories,
   });
 };
 
