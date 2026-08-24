@@ -31,9 +31,17 @@ const update = async (req, res) => {
   res.redirect(`/collections/${req.params.collectionId}`);
 };
 
+const deleteMemory = async (req, res) => {
+  await Memory.findByIdAndDelete(req.params.id);
+
+  res.redirect(`/collections/${req.params.collectionId}`);
+};
+
 module.exports = {
   new: newMemory,
   create,
   edit,
   update,
+    delete: deleteMemory,
+
 };

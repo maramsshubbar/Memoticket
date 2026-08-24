@@ -28,15 +28,22 @@
   <ul>
     <% memories.forEach(memory => { %>
 
-      <li>
-        <h3><%= memory.title %></h3>
+     <li>
+  <h3><%= memory.title %></h3>
 
-        <p><%= memory.description %></p>
+  <p><%= memory.description %></p>
 
-        <a href="/collections/<%= collection._id %>/memories/<%= memory._id %>/edit">
-            Edit Memory
-        </a>
-        </li>
+  <a href="/collections/<%= collection._id %>/memories/<%= memory._id %>/edit">
+    Edit Memory
+  </a>
+
+  <form
+    action="/collections/<%= collection._id %>/memories/<%= memory._id %>?_method=DELETE"
+    method="POST"
+  >
+    <button type="submit">Delete Memory</button>
+  </form>
+</li>
 
     <% }) %>
   </ul>
