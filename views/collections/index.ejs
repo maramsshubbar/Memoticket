@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h1>My Collections</h1>
+<h1>My Collections</h1>
 
-<% collections.forEach(collection => { %>
-    <p><%= collection.name %></p>
-<% }) %>
-</body>
-</html>
+<a href="/collections/new">Create New Collection</a>
+
+<ul>
+  <% collections.forEach(collection => { %>
+    <li>
+      <a href="/collections/<%= collection._id %>">
+        <%= collection.name %>
+      </a>
+    </li>
+  <% }) %>
+</ul>

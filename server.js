@@ -44,10 +44,12 @@ app.use(addUserToViews);
 // ROUTES
 app.use('', pagesRouter);
 app.use('/auth', authRouter);
-app.use('/collections', collectionsRouter);
 
 // Customer middleware
 app.use(isSignedIn);
+
+app.use('/collections', collectionsRouter);
+
 
 app.get('/protected', async (req, res) => {
   res.send(`You are logged in as ${req.session.user.username}`);

@@ -10,7 +10,13 @@ const index = async (req,res) => {
     });
 };
 
+const show = async (req, res) => {
+    const collection = await Collection.findById(req.params.id);
 
+    res.render('collections/show.ejs', {
+        collection,
+    });
+};
 
 const newCollection = (req,res)=> {
     res.render('collections/new.ejs');
@@ -28,4 +34,5 @@ module.exports = {
     index,
     new:newCollection,
     create,
+    show,
 };
