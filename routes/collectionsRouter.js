@@ -14,6 +14,10 @@ router.get('/:id/edit', collectionsCtrl.edit);
 
 router.put('/:id', collectionsCtrl.update);
 
+router.delete('/:id', collectionsCtrl.delete);
+
+
 router.get('/:id', collectionsCtrl.show);
+
 
 module.exports = router;

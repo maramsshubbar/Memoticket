@@ -45,6 +45,13 @@ const update = async (req, res) => {
   res.redirect(`/collections/${req.params.id}`);
 };
 
+
+const deleteCollection = async (req, res) => {
+  await Collection.findByIdAndDelete(req.params.id);
+
+  res.redirect('/collections');
+};
+
 module.exports = {
   index,
   show,
@@ -52,4 +59,5 @@ module.exports = {
   create,
   edit,
   update,
+  delete: deleteCollection,
 };
