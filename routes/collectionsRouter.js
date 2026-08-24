@@ -8,8 +8,12 @@ router.get('/', collectionsCtrl.index);
 
 router.get('/new', collectionsCtrl.new);
 
-router.get('/:id', collectionsCtrl.show);
-
 router.post('/', collectionsCtrl.create);
+
+router.get('/:id/edit', collectionsCtrl.edit);
+
+router.put('/:id', collectionsCtrl.update);
+
+router.get('/:id', collectionsCtrl.show);
 
 module.exports = router;
