@@ -1,0 +1,31 @@
+<h1>Edit Memory</h1>
+
+<form
+  action="/collections/<%= memory.collection %>/memories/<%= memory._id %>?_method=PUT"
+  method="POST"
+>
+
+  <label for="title">Title:</label>
+
+  <input
+    type="text"
+    id="title"
+    name="title"
+    value="<%= memory.title %>"
+    required
+  >
+
+  <label for="description">Description:</label>
+
+  <textarea
+    id="description"
+    name="description"
+  ><%= memory.description %></textarea>
+
+  <button type="submit">Update Memory</button>
+
+</form>
+
+<a href="/collections/<%= memory.collection %>">
+  Cancel
+</a>

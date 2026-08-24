@@ -30,8 +30,13 @@
 
       <li>
         <h3><%= memory.title %></h3>
+
         <p><%= memory.description %></p>
-      </li>
+
+        <a href="/collections/<%= collection._id %>/memories/<%= memory._id %>/edit">
+            Edit Memory
+        </a>
+        </li>
 
     <% }) %>
   </ul>
