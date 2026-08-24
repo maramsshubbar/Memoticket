@@ -16,9 +16,17 @@ const create = async (req, res) => {
   res.redirect(`/collections/${req.params.collectionId}`);
 };
 
-
 const edit = async (req, res) => {
-  const memory = await Memory.findById(req.params.id);
+  const memory = await Memory.findOne({
+    _id: req.params.id,
+  }).populate('collection');
+
+  if (
+    !memory ||
+    memory.collection.user.toString() !== req.session.user._id.toString()
+  ) {
+    return res.status(404).send('Memory not found');
+  }
 
   res.render('memories/edit.ejs', {
     memory,
@@ -26,12 +34,34 @@ const edit = async (req, res) => {
 };
 
 const update = async (req, res) => {
+  const memory = await Memory.findOne({
+    _id: req.params.id,
+  }).populate('collection');
+
+  if (
+    !memory ||
+    memory.collection.user.toString() !== req.session.user._id.toString()
+  ) {
+    return res.status(404).send('Memory not found');
+  }
+
   await Memory.findByIdAndUpdate(req.params.id, req.body);
 
   res.redirect(`/collections/${req.params.collectionId}`);
 };
 
 const deleteMemory = async (req, res) => {
+  const memory = await Memory.findOne({
+    _id: req.params.id,
+  }).populate('collection');
+
+  if (
+    !memory ||
+    memory.collection.user.toString() !== req.session.user._id.toString()
+  ) {
+    return res.status(404).send('Memory not found');
+  }
+
   await Memory.findByIdAndDelete(req.params.id);
 
   res.redirect(`/collections/${req.params.collectionId}`);
@@ -42,6 +72,5 @@ module.exports = {
   create,
   edit,
   update,
-    delete: deleteMemory,
-
+  delete: deleteMemory,
 };

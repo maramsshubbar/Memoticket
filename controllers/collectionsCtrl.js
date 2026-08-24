@@ -22,7 +22,7 @@ const show = async (req, res) => {
   }
 
   const memories = await Memory.find({
-    collection: req.params.id,
+    collection: collection._id,
   });
 
   res.render('collections/show.ejs', {
@@ -72,7 +72,7 @@ const update = async (req, res) => {
     return res.status(404).send('Collection not found');
   }
 
-  res.redirect(`/collections/${req.params.id}`);
+  res.redirect(`/collections/${collection._id}`);
 };
 
 const deleteCollection = async (req, res) => {
