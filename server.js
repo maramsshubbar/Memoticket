@@ -19,7 +19,7 @@ const addUserToViews = require('./middleware/addUserToViews');
 const authRouter = require('./routes/authRouter');
 const pagesRouter = require('./routes/pagesRouter');
 const collectionsRouter = require('./routes/collectionsRouter');
-
+const memoriesRouter = require('./routes/memoriesRouter');
 // Set the port from environment variable or default to 3000
 const port = process.env.PORT ? process.env.PORT : '3000';
 
@@ -50,6 +50,7 @@ app.use(isSignedIn);
 
 app.use('/collections', collectionsRouter);
 
+app.use('/collections/:collectionId/memories', memoriesRouter);
 
 app.get('/protected', async (req, res) => {
   res.send(`You are logged in as ${req.session.user.username}`);
