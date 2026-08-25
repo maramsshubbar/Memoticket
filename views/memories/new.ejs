@@ -1,69 +1,283 @@
-<h1>Add Memory</h1>
+<link rel="stylesheet" href="/stylesheets/style.css">
 
-<form action="/collections/<%= collectionId %>/memories" method="POST">
+<main class="new-memory-page">
 
-  <label for="title">Title:</label>
-  <input
-    type="text"
-    id="title"
-    name="title"
-    required
-  >
+  <section class="new-memory-header">
 
-  <label for="date">Date:</label>
-  <input
-    type="date"
-    id="date"
-    name="date"
-  >
+    <span class="eyebrow">NEW MEMORY</span>
 
-  <label for="location">Location:</label>
-  <input
-    type="text"
-    id="location"
-    name="location"
-  >
+    <h1>Add Memory</h1>
 
-  <label for="category">Category:</label>
-  <input
-    type="text"
-    id="category"
-    name="category"
-  >
+    <p>
+      Save the details that make this moment worth remembering.
+    </p>
 
-  <label for="rating">Rating:</label>
-  <input
-    type="number"
-    id="rating"
-    name="rating"
-    min="1"
-    max="5"
-  >
+  </section>
 
-  <label for="description">Description:</label>
-  <textarea
-    id="description"
-    name="description"
-  ></textarea>
 
-  <label for="imageUrl">Image URL:</label>
-  <input
-    type="url"
-    id="imageUrl"
-    name="imageUrl"
-  >
+  <section class="memory-form-card">
 
-  <label for="ticketNumber">Ticket Number:</label>
-  <input
-    type="text"
-    id="ticketNumber"
-    name="ticketNumber"
-  >
+    <div class="form-card-tape"></div>
 
-  <button type="submit">Add Memory</button>
+    <p class="form-card-label">MEMORY DETAILS</p>
 
-</form>
 
-<a href="/collections/<%= collectionId %>">
-  Cancel
-</a>
+    <form
+      action="/collections/<%= collectionId %>/memories"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+
+      <!-- TITLE + DATE -->
+      <div class="memory-form-row">
+
+        <div class="memory-form-group">
+
+          <label for="title">
+            Title
+          </label>
+
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="e.g. First Concert"
+            required
+          >
+
+        </div>
+
+
+        <div class="memory-form-group">
+
+          <label for="date">
+            Date
+          </label>
+
+          <input
+            type="date"
+            id="date"
+            name="date"
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- LOCATION + CATEGORY -->
+      <div class="memory-form-row">
+
+        <div class="memory-form-group">
+
+          <label for="location">
+            Location
+          </label>
+
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="Where did it happen?"
+          >
+
+        </div>
+
+
+        <div class="memory-form-group">
+
+          <label for="category">
+            Category
+          </label>
+
+          <input
+            type="text"
+            id="category"
+            name="category"
+            placeholder="e.g. Travel, Family"
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- RATING + TICKET -->
+      <div class="memory-form-row">
+
+        <div class="memory-form-group">
+
+          <label for="rating">
+            Rating
+          </label>
+
+          <input
+            type="number"
+            id="rating"
+            name="rating"
+            min="1"
+            max="5"
+            placeholder="1 - 5"
+          >
+
+        </div>
+
+
+        <div class="memory-form-group">
+
+          <label for="ticketNumber">
+            Ticket Number
+          </label>
+
+          <input
+            type="text"
+            id="ticketNumber"
+            name="ticketNumber"
+            placeholder="Optional"
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- DESCRIPTION -->
+      <div class="memory-form-group">
+
+        <label for="description">
+          Description
+        </label>
+
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Tell the story behind this memory..."
+        ></textarea>
+
+      </div>
+
+
+      <!-- IMAGE UPLOAD -->
+      <div class="memory-form-group">
+
+        <label>
+          Memory Image
+        </label>
+
+        <label
+          for="image"
+          class="image-upload-box"
+          id="uploadBox"
+        >
+
+          <div
+            class="upload-preview"
+            id="uploadPreview"
+          >
+
+            <div class="upload-icon">
+              +
+            </div>
+
+            <div class="upload-content">
+
+              <span class="upload-title">
+                Add a photo
+              </span>
+
+              <span class="upload-description">
+                Choose an image to keep with this memory.
+              </span>
+
+              <span class="upload-formats">
+                JPG · JPEG · PNG · WEBP
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/jpeg,image/png,image/webp"
+          >
+
+        </label>
+
+      </div>
+
+
+      <!-- ACTIONS -->
+      <div class="form-actions">
+
+        <a
+          class="back-link"
+          href="/collections/<%= collectionId %>"
+        >
+          ← Cancel
+        </a>
+
+
+        <button
+          class="create-collection-button"
+          type="submit"
+        >
+          Add Memory
+          <span>→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+  </section>
+
+
+  <script>
+
+    const imageInput = document.getElementById("image");
+    const uploadBox = document.getElementById("uploadBox");
+    const uploadPreview = document.getElementById("uploadPreview");
+
+    imageInput.addEventListener("change", function () {
+
+      const file = this.files[0];
+
+      if (!file) return;
+
+      const imageURL = URL.createObjectURL(file);
+
+      uploadPreview.innerHTML = `
+        <img
+          src="${imageURL}"
+          alt="Selected memory image"
+          class="selected-memory-image"
+        >
+
+        <div class="selected-image-info">
+
+          <span class="selected-image-title">
+            Photo selected
+          </span>
+
+          <span class="selected-image-name">
+            ${file.name}
+          </span>
+
+          <span class="change-photo">
+            Click to change
+          </span>
+
+        </div>
+      `;
+
+      uploadBox.classList.add("has-image");
+
+    });
+
+  </script>
+
+</main>
