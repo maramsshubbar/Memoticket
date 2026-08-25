@@ -3,24 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
+    <title>Sign Up | Memoticket</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
-  <body>
-    <h1>Create a new account!</h1>
-    <form action="/auth/sign-up" method="POST">
-      <label for="username">Username:</label>
-      <input type="text" name="username" id="username" required />
-      
-      <label for="email">Email</label>
-      <input type="email" name="email" required>
 
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password" required />
+  <body class="auth-body">
 
-      <label for="confirmPassword">Confirm Password:</label>
-      <input type="password" name="confirmPassword" id="confirmPassword" required />
+    <main class="auth-page">
 
-      <button type="submit">Sign up</button>
-    </form>
+      <div class="auth-brand">
+        <a href="/">MEMOTICKET</a>
+      </div>
+
+      <section class="auth-card auth-card-signup">
+
+        <div class="auth-heading">
+          <span>START YOUR STORY</span>
+
+          <h1>Create account.</h1>
+
+          <p>
+            Create your space and start keeping
+            the memories that matter.
+          </p>
+        </div>
+
+        <form action="/auth/sign-up" method="POST" class="auth-form">
+
+          <div class="auth-field">
+            <label for="username">Username</label>
+
+            <input
+              type="text"
+              name="username"
+              id="username"
+              required
+            />
+          </div>
+
+          <div class="auth-field">
+            <label for="email">Email</label>
+
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+            />
+          </div>
+
+          <div class="auth-field">
+            <label for="password">Password</label>
+
+            <input
+              type="password"
+              name="password"
+              id="password"
+              required
+            />
+          </div>
+
+          <div class="auth-field">
+            <label for="confirmPassword">Confirm Password</label>
+
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              required
+            />
+          </div>
+
+          <button type="submit" class="auth-submit">
+            Create Account
+            <span>→</span>
+          </button>
+
+        </form>
+
+        <div class="auth-switch">
+          <span>Already have an account?</span>
+          <a href="/auth/sign-in">Sign in</a>
+        </div>
+
+      </section>
+
+      <a href="/" class="auth-back">
+        ← Back to Memoticket
+      </a>
+
+    </main>
+
   </body>
 </html>
