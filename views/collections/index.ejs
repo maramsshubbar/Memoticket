@@ -1,13 +1,55 @@
-<h1>My Collections</h1>
+<link rel="stylesheet" href="/stylesheets/style.css">
 
-<a href="/collections/new">Create New Collection</a>
+<main class="collections-page">
 
-<ul>
-  <% collections.forEach(collection => { %>
-    <li>
-      <a href="/collections/<%= collection._id %>">
-        <%= collection.name %>
-      </a>
-    </li>
-  <% }) %>
-</ul>
+  <section class="collections-header">
+
+    <div>
+      <p class="eyebrow">YOUR MEMORIES</p>
+
+      <h1>My Collections</h1>
+
+      <p class="page-description">
+        Keep your favorite memories organized in one beautiful place.
+      </p>
+    </div>
+
+    <a class="create-button" href="/collections/new">
+      + Create Collection
+    </a>
+
+  </section>
+
+
+  <section class="collections-grid">
+
+    <% collections.forEach(collection => { %>
+
+      <article class="collection-card">
+
+        <a
+          class="collection-card-link"
+          href="/collections/<%= collection._id %>"
+        >
+
+          <h2><%= collection.name %></h2>
+
+          <% if (collection.description) { %>
+
+            <p><%= collection.description %></p>
+
+          <% } %>
+
+          <span class="view-collection">
+            View Collection →
+          </span>
+
+        </a>
+
+      </article>
+
+    <% }) %>
+
+  </section>
+
+</main>

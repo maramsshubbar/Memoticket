@@ -22,7 +22,7 @@ const show = async (req, res) => {
   }
 
   const memories = await Memory.find({
-    collection: collection._id,
+    collection: req.params.id,
   });
 
   res.render('collections/show.ejs', {
