@@ -1,10 +1,11 @@
 const express = require('express');
 
-const router = express.Router({ mergeParams: true });
-
+const pagesCtrl = require('../controllers/pagesCtrl');
 const memoriesCtrl = require('../controllers/memoriesCtrl');
 
-console.log('MEMORIES CTRL:', memoriesCtrl);
+const router = express.Router();
+
+router.get('/', memoriesCtrl.index);
 
 router.get('/new', memoriesCtrl.new);
 
