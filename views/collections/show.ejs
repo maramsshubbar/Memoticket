@@ -1,59 +1,231 @@
-<h1><%= collection.name %></h1>
+<link rel="stylesheet" href="/stylesheets/style.css">
 
-<p><%= collection.description %></p>
+<main class="collection-show-page">
 
-<a href="/collections/<%= collection._id %>/edit">
-  Edit Collection
-</a>
-
-<br>
-
-<form
-  action="/collections/<%= collection._id %>?_method=DELETE"
-  method="POST"
->
-  <button type="submit">Delete Collection</button>
-</form>
-
-<br>
-
-<h2>Memories</h2>
-
-<a href="/collections/<%= collection._id %>/memories/new">
-  Add Memory
-</a>
-
-<% if (memories.length > 0) { %>
-
-  <ul>
-    <% memories.forEach(memory => { %>
-
-     <li>
-  <h3><%= memory.title %></h3>
-
-  <p><%= memory.description %></p>
-
-  <a href="/collections/<%= collection._id %>/memories/<%= memory._id %>/edit">
-    Edit Memory
+  <!-- BACK -->
+  <a href="/collections" class="collection-back">
+    ← My Collections
   </a>
 
-  <form
-    action="/collections/<%= collection._id %>/memories/<%= memory._id %>?_method=DELETE"
-    method="POST"
-  >
-    <button type="submit">Delete Memory</button>
-  </form>
-</li>
+  <!-- COLLECTION HEADER -->
+  <section class="collection-show-header">
 
-    <% }) %>
-  </ul>
+    <div class="collection-header-content">
 
-<% } else { %>
+      <span class="collection-label">
+        MEMORY COLLECTION
+      </span>
 
-  <p>No memories yet.</p>
+      <h1>
+        <%= collection.name %>
+      </h1>
 
-<% } %>
+      <% if (collection.description) { %>
+        <p class="collection-description">
+          <%= collection.description %>
+        </p>
+      <% } %>
 
-<br>
+    </div>
 
-<a href="/collections">Back to My Collections</a>
+    <!-- COLLECTION ACTIONS -->
+    <div class="collection-actions">
+
+      <a
+        href="/collections/<%= collection._id %>/edit"
+        class="edit-collection-button"
+      >
+        Edit Collection
+      </a>
+
+      <form
+        action="/collections/<%= collection._id %>?_method=DELETE"
+        method="POST"
+      >
+        <button
+          type="submit"
+          class="delete-collection-button"
+        >
+          Delete
+        </button>
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- MEMORIES SECTION -->
+  <section class="memories-section">
+
+    <div class="memories-header">
+
+      <div>
+
+        <span class="section-label">
+          YOUR MEMORIES
+        </span>
+
+        <h2>
+          Moments from this collection
+        </h2>
+
+      </div>
+
+      <a
+        href="/collections/<%= collection._id %>/memories/new"
+        class="add-memory-button"
+      >
+        + Add Memory
+      </a>
+
+    </div>
+
+
+    <% if (memories.length > 0) { %>
+
+      <div class="memory-show-grid">
+
+        <% memories.forEach(memory => { %>
+
+          <article class="memory-show-card">
+
+            <!-- CARD TOP -->
+            <div class="memory-card-top">
+
+              <span class="memory-card-label">
+                MEMORY
+              </span>
+
+              <% if (memory.date) { %>
+
+                <span class="memory-card-date">
+                  <%= new Date(memory.date).toLocaleDateString() %>
+                </span>
+
+              <% } %>
+
+            </div>
+
+
+            <!-- MEMORY IMAGE -->
+            <% if (memory.imageUrl) { %>
+
+              <div class="memory-card-image">
+
+                <img
+                  src="<%= memory.imageUrl %>"
+                  alt="<%= memory.title %>"
+                >
+
+              </div>
+
+            <% } %>
+
+
+            <!-- MEMORY CONTENT -->
+            <div class="memory-card-content">
+
+              <h3>
+                <%= memory.title %>
+              </h3>
+
+
+              <% if (memory.location) { %>
+
+                <p class="memory-location">
+                  📍 <%= memory.location %>
+                </p>
+
+              <% } %>
+
+
+              <% if (memory.description) { %>
+
+                <p class="memory-description">
+                  <%= memory.description %>
+                </p>
+
+              <% } %>
+
+
+              <% if (memory.category || memory.rating) { %>
+
+                <div class="memory-meta">
+
+                  <% if (memory.category) { %>
+
+                    <span class="memory-category">
+                      <%= memory.category %>
+                    </span>
+
+                  <% } %>
+
+
+                  <% if (memory.rating) { %>
+
+                    <span class="memory-rating">
+                      ★ <%= memory.rating %>/5
+                    </span>
+
+                  <% } %>
+
+                </div>
+
+              <% } %>
+
+            </div>
+
+
+            <!-- CARD FOOTER -->
+            <div class="memory-card-footer">
+
+              <a
+                href="/collections/<%= collection._id %>/memories/<%= memory._id %>/edit"
+                class="memory-edit-link"
+              >
+                Edit Memory
+              </a>
+
+            </div>
+
+          </article>
+
+        <% }) %>
+
+      </div>
+
+
+    <% } else { %>
+
+      <!-- EMPTY STATE -->
+
+      <div class="empty-memories">
+
+        <div class="empty-icon">
+          ✦
+        </div>
+
+        <h3>
+          Your collection is waiting for its first memory.
+        </h3>
+
+        <p>
+          Start capturing a moment, a place, or a story
+          that you want to remember.
+        </p>
+
+        <a
+          href="/collections/<%= collection._id %>/memories/new"
+          class="empty-add-button"
+        >
+          Add Your First Memory
+        </a>
+
+      </div>
+
+    <% } %>
+
+  </section>
+
+</main>
