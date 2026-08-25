@@ -1,12 +1,153 @@
-#navbar{
+/* =========================
+   NAVBAR
+========================= */
+
+#navbar {
+  max-width: 1180px;
+  margin: 0 auto;
+
+  padding: 28px 40px;
+
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e8e1d8;
 }
 
-.nav-link{
+/* Logo */
 
+.navbar-logo {
+  color: #292827;
+
+  text-decoration: none;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  transition: 0.2s ease;
 }
 
-#footer{
-
+.navbar-logo:hover {
+  color: #c98278;
 }
 
+/* Links container */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Normal links */
+
+.nav-link {
+  color: #6f6963;
+
+  text-decoration: none;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #c98278;
+}
+
+/* Create button */
+
+.nav-button {
+  padding: 11px 18px;
+
+  background: #292827;
+  color: #fffdf9;
+
+  border-radius: 25px;
+}
+
+.nav-button:hover {
+  background: #c98278;
+  color: #fffdf9;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+#footer {
+  max-width: 1180px;
+  margin: 80px auto 0;
+
+  padding: 28px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid #e8e1d8;
+
+  color: #8b847d;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+}
+
+#footer p,
+#footer span {
+  margin: 0;
+}
+
+#footer span {
+  font-size: 10px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  #navbar {
+    padding: 22px 20px;
+
+    align-items: flex-start;
+  }
+
+  .navbar-logo {
+    font-size: 20px;
+  }
+
+  .navbar-links {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .nav-link {
+    font-size: 11px;
+  }
+
+  .nav-button {
+    padding: 9px 13px;
+  }
+
+  #footer {
+    margin-top: 60px;
+    padding: 25px 20px;
+
+    flex-direction: column;
+    gap: 10px;
+
+    text-align: center;
+  }
+
+}
