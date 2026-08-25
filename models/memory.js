@@ -6,8 +6,40 @@ const memorySchema = new mongoose.Schema({
     required: true,
   },
 
+  date: {
+    type: Date,
+  },
+
+  location: {
+    type: String,
+  },
+
+  category: {
+    type: String,
+  },
+
+  rating: {
+    type: Number,
+    min: 1,
+    max: 5,
+  },
+
   description: {
     type: String,
+  },
+
+  imageUrl: {
+    type: String,
+  },
+
+  ticketNumber: {
+    type: String,
+  },
+
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
   },
 
   collection: {
@@ -17,6 +49,11 @@ const memorySchema = new mongoose.Schema({
   },
 
   createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+
+  updatedAt: {
     type: Date,
     default: Date.now,
   },

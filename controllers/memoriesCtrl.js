@@ -10,6 +10,7 @@ const newMemory = (req, res) => {
 
 const create = async (req, res) => {
   req.body.collection = req.params.collectionId;
+  req.body.user = req.session.user._id;
 
   await Memory.create(req.body);
 

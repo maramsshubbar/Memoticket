@@ -4,8 +4,8 @@
   action="/collections/<%= memory.collection._id %>/memories/<%= memory._id %>?_method=PUT"
   method="POST"
 >
-  <label for="title">Title:</label>
 
+  <label for="title">Title:</label>
   <input
     type="text"
     id="title"
@@ -14,14 +14,64 @@
     required
   >
 
-  <label for="description">Description:</label>
+  <label for="date">Date:</label>
+  <input
+    type="date"
+    id="date"
+    name="date"
+    value="<%= memory.date ? memory.date.toISOString().split('T')[0] : '' %>"
+  >
 
+  <label for="location">Location:</label>
+  <input
+    type="text"
+    id="location"
+    name="location"
+    value="<%= memory.location || '' %>"
+  >
+
+  <label for="category">Category:</label>
+  <input
+    type="text"
+    id="category"
+    name="category"
+    value="<%= memory.category || '' %>"
+  >
+
+  <label for="rating">Rating:</label>
+  <input
+    type="number"
+    id="rating"
+    name="rating"
+    min="1"
+    max="5"
+    value="<%= memory.rating || '' %>"
+  >
+
+  <label for="description">Description:</label>
   <textarea
     id="description"
     name="description"
-  ><%= memory.description %></textarea>
+  ><%= memory.description || '' %></textarea>
+
+  <label for="imageUrl">Image URL:</label>
+  <input
+    type="url"
+    id="imageUrl"
+    name="imageUrl"
+    value="<%= memory.imageUrl || '' %>"
+  >
+
+  <label for="ticketNumber">Ticket Number:</label>
+  <input
+    type="text"
+    id="ticketNumber"
+    name="ticketNumber"
+    value="<%= memory.ticketNumber || '' %>"
+  >
 
   <button type="submit">Update Memory</button>
+
 </form>
 
 <a href="/collections/<%= memory.collection._id %>">
