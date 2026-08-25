@@ -7,6 +7,9 @@ const express = require('express');
 
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 // Middleware
 const session = require('express-session');
 const MongoStore = require('connect-mongo').MongoStore;
@@ -51,7 +54,6 @@ app.use(isSignedIn);
 app.use('/collections', collectionsRouter);
 
 app.use('/collections/:collectionId/memories', memoriesRouter);
-
 app.get('/protected', async (req, res) => {
   res.send(`You are logged in as ${req.session.user.username}`);
 });
