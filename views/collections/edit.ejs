@@ -1,24 +1,80 @@
-<h1>Edit Collection</h1>
+<link rel="stylesheet" href="/stylesheets/style.css">
 
-<form action="/collections/<%= collection._id %>?_method=PUT" method="POST">
+<main class="new-collection-page">
 
-  <label for="name">Name:</label>
-  <input
-    type="text"
-    id="name"
-    name="name"
-    value="<%= collection.name %>"
-    required
-  >
+  <section class="new-collection-header">
 
-  <label for="description">Description:</label>
-  <textarea
-    id="description"
-    name="description"
-  ><%= collection.description %></textarea>
+    <span class="eyebrow">EDIT COLLECTION</span>
 
-  <button type="submit">Update Collection</button>
+    <h1>Edit Collection</h1>
 
-</form>
+    <p>
+      Update your collection details and keep your memories organized.
+    </p>
 
-<a href="/collections/<%= collection._id %>">Cancel</a>
+  </section>
+
+
+  <section class="collection-form-card">
+
+    <div class="form-card-tape"></div>
+
+    <p class="form-card-label">COLLECTION DETAILS</p>
+
+    <form
+      action="/collections/<%= collection._id %>?_method=PUT"
+      method="POST"
+    >
+
+      <div class="form-group">
+
+        <label for="name">Collection Name</label>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value="<%= collection.name %>"
+          required
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="description">Description</label>
+
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Describe what memories belong in this collection..."
+        ><%= collection.description %></textarea>
+
+      </div>
+
+
+      <div class="form-actions">
+
+        <a
+          class="back-link"
+          href="/collections/<%= collection._id %>"
+        >
+          ← Cancel
+        </a>
+
+        <button
+          class="create-collection-button"
+          type="submit"
+        >
+          Update Collection
+          <span>→</span>
+        </button>
+
+      </div>
+
+    </form>
+
+  </section>
+
+</main>
