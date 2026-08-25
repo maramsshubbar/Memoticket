@@ -1,0 +1,171 @@
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="/stylesheets/partials.css">
+<%- include('../partials/_navbar') %>
+<main class="memories-page">
+<section class="memories-header">
+<div class="memories-header-text">
+
+  <span class="memories-eyebrow">
+    YOUR MEMORIES
+  </span>
+
+  <h1>
+    Moments worth<br>
+    remembering.
+  </h1>
+
+  <p>
+    All your memories in one place — across every collection,
+    every moment, and every story.
+  </p>
+
+</div>
+
+<div class="memories-count">
+  <span class="count-number">
+    <%= memories.length %>
+  </span>
+
+  <span class="count-label">
+    MEMORIES<br>
+    SAVED
+  </span>
+</div>
+</section>
+<section class="memories-content">
+<% if (memories.length === 0) { %>
+
+  <div class="empty-memories">
+
+    <span class="empty-icon">✦</span>
+
+    <h2>
+      No memories yet.
+    </h2>
+
+    <p>
+      Your next story could start here.
+    </p>
+
+    <a href="/collections" class="memories-button">
+      Go to Collections
+      <span>→</span>
+    </a>
+
+  </div>
+
+<% } else { %>
+
+  <div class="memories-grid">
+
+    <% memories.forEach((memory, index) => { %>
+
+      <article class="memory-card">
+
+        <% if (memory.imageUrl) { %>
+
+          <div class="memory-card-image">
+
+            <img
+              src="<%= memory.imageUrl %>"
+              alt="<%= memory.title %>"
+            >
+
+          </div>
+
+        <% } else { %>
+
+          <div class="memory-card-placeholder">
+            <span>✦</span>
+          </div>
+
+        <% } %>
+
+
+        <div class="memory-card-content">
+
+          <div class="memory-card-top">
+
+            <span class="memory-card-number">
+              <%= String(index + 1).padStart(2, '0') %>
+            </span>
+
+            <% if (memory.category) { %>
+
+              <span class="memory-card-category">
+                <%= memory.category %>
+              </span>
+
+            <% } %>
+
+          </div>
+
+
+          <h2>
+            <%= memory.title %>
+          </h2>
+
+
+          <% if (memory.date) { %>
+
+            <p class="memory-card-date">
+              <%= new Date(memory.date).toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+              }) %>
+            </p>
+
+          <% } %>
+
+
+          <% if (memory.location) { %>
+
+            <p class="memory-card-location">
+              <span>⌖</span>
+              <%= memory.location %>
+            </p>
+
+          <% } %>
+
+
+          <% if (memory.description) { %>
+
+            <p class="memory-card-description">
+              <%= memory.description %>
+            </p>
+
+          <% } %>
+
+
+          <div class="memory-card-footer">
+
+            <% if (memory.rating) { %>
+
+              <span class="memory-rating">
+                ★ <%= memory.rating %>/5
+              </span>
+
+            <% } %>
+
+            <a
+              href="/collections/<%= memory.collection._id %>/memories/<%= memory._id %>/edit"
+              class="memory-edit-link"
+            >
+              Edit →
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    <% }) %>
+
+  </div>
+
+<% } %>
+</section>
+</main>
+<%- include('../partials/_footer') %>
