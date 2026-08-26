@@ -4029,3 +4029,2701 @@ grid-template-columns: 1fr;
   }
 
 }
+
+/* =========================================
+   HOME PAGE
+   Memoticket — Warm Editorial Style
+========================================= */
+
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  background: #f6f3ee;
+  color: #292827;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   SOFT BACKGROUND
+========================================= */
+
+.home-page::before {
+  content: "";
+  position: fixed;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: #ead8d2;
+
+  top: -180px;
+  right: -150px;
+
+  opacity: 0.5;
+
+  z-index: -1;
+}
+
+.home-page::after {
+  content: "";
+  position: fixed;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  background: #d9e3da;
+
+  bottom: -150px;
+  left: -130px;
+
+  opacity: 0.6;
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.home-navbar {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+  padding: 18px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #ded8cf;
+}
+
+.home-brand {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+}
+
+.home-brand img {
+  width: 145px;
+  height: 70px;
+
+  object-fit: contain;
+
+  transform: translateX(-15px);
+}
+
+.home-nav-links {
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+}
+
+.home-nav-links a {
+  color: #4d4945;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  transition: 0.25s ease;
+}
+
+.home-nav-links a:hover {
+  color: #b9786e;
+}
+
+.home-nav-button {
+  padding: 10px 18px;
+
+  border: 1px solid #292827;
+  border-radius: 30px;
+
+  color: #292827 !important;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease !important;
+}
+
+.home-nav-button:hover {
+  background: #292827;
+
+  color: #fffdf9 !important;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.home-hero {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 0 40px;
+
+  min-height: 610px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.home-hero-content {
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns: 1.15fr 0.85fr;
+
+  align-items: center;
+
+  gap: 70px;
+
+  padding: 65px 0 75px;
+
+  animation: homeFadeUp 0.8s ease both;
+}
+
+
+/* =========================================
+   HERO TEXT
+========================================= */
+
+.home-eyebrow {
+  display: inline-block;
+
+  width: fit-content;
+
+  margin-bottom: 20px;
+
+  padding: 8px 15px;
+
+  border-radius: 20px;
+
+  background: #e8d4ce;
+
+  color: #986d63;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.home-hero h1 {
+  max-width: 720px;
+
+  margin: 0 0 24px;
+
+  color: #292827;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(50px, 6.5vw, 78px);
+
+  line-height: 0.98;
+
+  letter-spacing: -2px;
+}
+
+.home-hero-content p {
+  max-width: 500px;
+
+  margin: 0 0 28px;
+
+  color: #77716b;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.home-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.home-primary-button,
+.home-secondary-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 14px 21px;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.home-primary-button {
+  background: #292827;
+
+  color: #fffdf9;
+
+  border: 1px solid #292827;
+}
+
+.home-primary-button:hover {
+  background: #b9786e;
+
+  border-color: #b9786e;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 22px rgba(41, 40, 39, 0.12);
+}
+
+.home-primary-button span {
+  font-size: 17px;
+
+  transition: transform 0.25s ease;
+}
+
+.home-primary-button:hover span {
+  transform: translateX(4px);
+}
+
+.home-secondary-button {
+  background: transparent;
+
+  color: #77716b;
+
+  border: 1px solid #d4cbc2;
+}
+
+.home-secondary-button:hover {
+  color: #b9786e;
+
+  border-color: #b9786e;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   HERO TICKET PREVIEW
+========================================= */
+
+.home-hero-ticket {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  min-height: 390px;
+
+  perspective: 1000px;
+}
+
+.home-hero-ticket .home-ticket {
+  width: 100%;
+  max-width: 390px;
+
+  min-height: 315px;
+
+  transform: rotate(4deg);
+
+  animation: ticketFloat 5s ease-in-out infinite;
+}
+
+.home-hero-ticket .home-ticket:hover {
+  transform: rotate(0deg) translateY(-8px);
+}
+
+
+/* Small decorative circle behind ticket */
+
+.home-hero-ticket::before {
+  content: "";
+
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  border-radius: 50%;
+
+  background: #e8d4ce;
+
+  opacity: 0.55;
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.home-intro {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 105px 40px;
+
+  border-top: 1px solid #ded8cf;
+}
+
+.home-section-label {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: #b9786e;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.home-intro-content {
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 80px;
+}
+
+.home-intro h2 {
+  margin: 0;
+
+  color: #292827;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(40px, 5vw, 62px);
+
+  line-height: 1.05;
+
+  letter-spacing: -1.5px;
+}
+
+.home-intro p {
+  align-self: end;
+
+  margin: 0;
+
+  max-width: 500px;
+
+  color: #77716b;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================
+   HOW IT WORKS
+========================================= */
+
+.home-how {
+  padding: 110px 40px;
+
+  background: #eee8e1;
+
+  border-top: 1px solid #ded8cf;
+
+  border-bottom: 1px solid #ded8cf;
+}
+
+.home-section-heading,
+.home-steps {
+  max-width: 1180px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-section-heading h2 {
+  margin: 0;
+
+  color: #292827;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(40px, 5vw, 58px);
+
+  line-height: 1;
+
+  letter-spacing: -1.5px;
+}
+
+.home-steps {
+  margin-top: 65px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.home-step {
+  position: relative;
+
+  min-height: 280px;
+
+  padding: 30px;
+
+  background: #fffdf9;
+
+  border: 1px solid #ded8cf;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 10px 25px rgba(41, 40, 39, 0.045);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Little tape */
+
+.home-step::before {
+  content: "";
+
+  position: absolute;
+
+  width: 65px;
+  height: 20px;
+
+  top: -10px;
+  left: 50%;
+
+  transform: translateX(-50%) rotate(-2deg);
+
+  background: rgba(214, 185, 158, 0.6);
+
+  z-index: 2;
+}
+
+.home-step:nth-child(2)::before {
+  transform: translateX(-50%) rotate(3deg);
+}
+
+.home-step:nth-child(3)::before {
+  transform: translateX(-50%) rotate(-3deg);
+}
+
+
+/* Card rotations */
+
+.home-step:nth-child(1) {
+  transform: rotate(-1deg);
+}
+
+.home-step:nth-child(2) {
+  transform: rotate(0.7deg);
+}
+
+.home-step:nth-child(3) {
+  transform: rotate(-0.5deg);
+}
+
+
+/* Hover */
+
+.home-step:hover {
+  transform: translateY(-8px) rotate(0deg);
+
+  box-shadow:
+    0 20px 35px rgba(41, 40, 39, 0.10);
+}
+
+.home-step-number {
+  display: block;
+
+  margin-bottom: 45px;
+
+  color: #b9786e;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.home-step h3 {
+  margin: 0 0 12px;
+
+  color: #292827;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 28px;
+
+  line-height: 1.2;
+}
+
+.home-step p {
+  max-width: 300px;
+
+  margin: 0;
+
+  color: #77716b;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   MEMORY TICKET SECTION
+========================================= */
+
+.home-ticket-section {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 120px 40px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 90px;
+}
+
+.home-ticket-copy h2 {
+  margin: 0 0 25px;
+
+  color: #292827;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(42px, 5vw, 62px);
+
+  line-height: 1;
+
+  letter-spacing: -1.5px;
+}
+
+.home-ticket-copy p {
+  max-width: 500px;
+
+  margin: 0 0 28px;
+
+  color: #77716b;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+.home-text-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #292827;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  border-bottom: 1px solid #292827;
+
+  padding-bottom: 5px;
+
+  transition: 0.25s ease;
+}
+
+.home-text-link span {
+  font-size: 17px;
+
+  transition: transform 0.25s ease;
+}
+
+.home-text-link:hover {
+  color: #b9786e;
+
+  border-color: #b9786e;
+}
+
+.home-text-link:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   MEMORY TICKET
+========================================= */
+
+.home-ticket {
+  position: relative;
+
+  padding: 45px 38px 35px;
+
+  min-height: 300px;
+
+  background: #fffdf9;
+
+  border: 1px solid #ded8cf;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 25px 50px rgba(41, 40, 39, 0.10),
+    0 5px 12px rgba(41, 40, 39, 0.04);
+
+  transform: rotate(3deg);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Tape */
+
+.home-ticket::before {
+  content: "";
+
+  position: absolute;
+
+  width: 90px;
+  height: 24px;
+
+  top: -13px;
+  left: 50%;
+
+  transform: translateX(-50%) rotate(-3deg);
+
+  background: rgba(214, 185, 158, 0.65);
+
+  z-index: 2;
+}
+
+
+/* Dashed ticket line */
+
+.home-ticket::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 53%;
+
+  border-top: 1px dashed #d8d0c7;
+}
+
+.home-ticket:hover {
+  transform: rotate(0deg) translateY(-6px);
+
+  box-shadow:
+    0 30px 60px rgba(41, 40, 39, 0.13);
+}
+
+.home-ticket-small {
+  display: block;
+
+  margin-bottom: 42px;
+
+  color: #b9786e;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.home-ticket h3 {
+  margin: 0 0 24px;
+
+  color: #292827;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 35px;
+
+  line-height: 1.1;
+}
+
+.home-ticket-line {
+  width: 100%;
+
+  margin-bottom: 22px;
+
+  border-top: 1px solid #e6dfd7;
+}
+
+.home-ticket-details {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-bottom: 55px;
+}
+
+.home-ticket-details span {
+  color: #77716b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.home-ticket-bottom {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  color: #a0786e;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.home-final {
+  position: relative;
+
+  padding: 120px 40px;
+
+  text-align: center;
+
+  background: #292827;
+
+  color: #fffdf9;
+
+  overflow: hidden;
+}
+
+.home-final::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  background: #b9786e;
+
+  top: -180px;
+  right: -100px;
+
+  opacity: 0.12;
+}
+
+.home-final::after {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  border-radius: 50%;
+
+  background: #d9e3da;
+
+  bottom: -150px;
+  left: -80px;
+
+  opacity: 0.08;
+}
+
+.home-final .home-section-label {
+  position: relative;
+
+  color: #c8a39c;
+
+  z-index: 1;
+}
+
+.home-final h2 {
+  position: relative;
+
+  margin: 0 0 22px;
+
+  color: #fffdf9;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(44px, 6vw, 70px);
+
+  line-height: 1;
+
+  letter-spacing: -1.5px;
+
+  z-index: 1;
+}
+
+.home-final p {
+  position: relative;
+
+  max-width: 450px;
+
+  margin: 0 auto 32px;
+
+  color: #c8c2ba;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  z-index: 1;
+}
+
+.home-final .home-primary-button {
+  position: relative;
+
+  background: #fffdf9;
+
+  color: #292827;
+
+  border-color: #fffdf9;
+
+  z-index: 1;
+}
+
+.home-final .home-primary-button:hover {
+  background: #e8d4ce;
+
+  border-color: #e8d4ce;
+
+  color: #292827;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes homeFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ticketFloat {
+  0%,
+  100% {
+    transform: rotate(4deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(2deg) translateY(-8px);
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .home-hero {
+    min-height: auto;
+  }
+
+  .home-hero-content {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding: 70px 0 90px;
+  }
+
+  .home-hero-ticket {
+    min-height: 350px;
+  }
+
+  .home-hero-ticket .home-ticket {
+    max-width: 430px;
+  }
+
+  .home-intro-content {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .home-steps {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .home-step:nth-child(n) {
+    transform: rotate(0deg);
+  }
+
+  .home-ticket-section {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+  }
+
+  .home-ticket {
+    max-width: 520px;
+
+    width: 100%;
+
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .home-navbar {
+    padding: 15px 20px;
+  }
+
+  .home-brand img {
+    width: 120px;
+    height: 65px;
+
+    transform: translateX(-8px);
+  }
+
+  .home-nav-links {
+    gap: 12px;
+  }
+
+  .home-nav-links a {
+    font-size: 9px;
+  }
+
+  .home-nav-button {
+    padding: 9px 13px;
+  }
+
+  .home-hero {
+    padding: 0 20px;
+  }
+
+  .home-hero-content {
+    padding: 60px 0 80px;
+
+    gap: 15px;
+  }
+
+  .home-hero h1 {
+    font-size: 48px;
+
+    letter-spacing: -1px;
+  }
+
+  .home-hero-content p {
+    font-size: 14px;
+  }
+
+  .home-actions {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .home-primary-button,
+  .home-secondary-button {
+    width: 100%;
+
+    max-width: 260px;
+  }
+
+  .home-hero-ticket {
+    min-height: 320px;
+  }
+
+  .home-hero-ticket .home-ticket {
+    max-width: 350px;
+
+    min-height: 290px;
+  }
+
+  .home-intro {
+    padding: 80px 20px;
+  }
+
+  .home-intro h2 {
+    font-size: 42px;
+  }
+
+  .home-how {
+    padding: 80px 20px;
+  }
+
+  .home-section-heading h2 {
+    font-size: 42px;
+  }
+
+  .home-ticket-section {
+    padding: 90px 20px;
+  }
+
+  .home-ticket-copy h2 {
+    font-size: 44px;
+  }
+
+  .home-ticket {
+    padding: 38px 28px 30px;
+
+    transform: rotate(2deg);
+  }
+
+  .home-final {
+    padding: 100px 20px;
+  }
+
+  .home-final h2 {
+    font-size: 45px;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .home-nav-links a:first-child {
+    display: none;
+  }
+
+}
+
+
+/* =========================================
+   HOME PAGE
+   Memoticket — Warm Editorial Style
+========================================= */
+
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  background: #f6f3ee;
+  color: #292827;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   SOFT BACKGROUND
+========================================= */
+
+.home-page::before {
+  content: "";
+
+  position: fixed;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: #ead8d2;
+
+  top: -180px;
+  right: -150px;
+
+  opacity: 0.5;
+
+  z-index: -1;
+}
+
+.home-page::after {
+  content: "";
+
+  position: fixed;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  background: #d9e3da;
+
+  bottom: -150px;
+  left: -130px;
+
+  opacity: 0.6;
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.home-navbar {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 18px 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom: 1px solid #ded8cf;
+}
+
+.home-brand {
+  display: flex;
+
+  align-items: center;
+
+  text-decoration: none;
+}
+
+.home-brand img {
+  width: 145px;
+  height: 70px;
+
+  object-fit: contain;
+
+  transform: translateX(-15px);
+}
+
+.home-nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+}
+
+.home-nav-links a {
+  color: #4d4945;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  transition: 0.25s ease;
+}
+
+.home-nav-links a:hover {
+  color: #b9786e;
+}
+
+.home-nav-button {
+  padding: 10px 18px;
+
+  border: 1px solid #292827;
+
+  border-radius: 30px;
+
+  color: #292827 !important;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease !important;
+}
+
+.home-nav-button:hover {
+  background: #292827;
+
+  color: #fffdf9 !important;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.home-hero {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 0 40px;
+
+  min-height: 610px;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.home-hero-content {
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  align-items: center;
+
+  gap: 70px;
+
+  padding: 65px 0 85px;
+
+  animation: homeFadeUp 0.8s ease both;
+}
+
+
+/* =========================================
+   HERO TEXT
+========================================= */
+
+.home-hero-text {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.home-eyebrow {
+  display: inline-block;
+
+  width: fit-content;
+
+  margin-bottom: 20px;
+
+  padding: 8px 15px;
+
+  border-radius: 20px;
+
+  background: #e8d4ce;
+
+  color: #986d63;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.home-hero h1 {
+  max-width: 720px;
+
+  margin: 0 0 24px;
+
+  color: #292827;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(50px, 6.5vw, 78px);
+
+  line-height: 0.98;
+
+  letter-spacing: -2px;
+}
+
+.home-hero-content p {
+  max-width: 500px;
+
+  margin: 0 0 28px;
+
+  color: #77716b;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.home-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.home-primary-button,
+.home-secondary-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 14px 21px;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.home-primary-button {
+  background: #292827;
+
+  color: #fffdf9;
+
+  border: 1px solid #292827;
+}
+
+.home-primary-button:hover {
+  background: #b9786e;
+
+  border-color: #b9786e;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 22px rgba(41, 40, 39, 0.12);
+}
+
+.home-primary-button span {
+  font-size: 17px;
+
+  transition: transform 0.25s ease;
+}
+
+.home-primary-button:hover span {
+  transform: translateX(4px);
+}
+
+.home-secondary-button {
+  background: transparent;
+
+  color: #77716b;
+
+  border: 1px solid #d4cbc2;
+}
+
+.home-secondary-button:hover {
+  color: #b9786e;
+
+  border-color: #b9786e;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   HERO CARD
+========================================= */
+
+.home-hero-card {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 390px;
+
+  min-height: 300px;
+
+  padding: 30px;
+
+  background: #fffdf9;
+
+  border: 1px solid #ded8cf;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 20px 40px rgba(41, 40, 39, 0.08);
+
+  transform: rotate(3deg);
+
+  justify-self: center;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Tape */
+
+.home-hero-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 65px;
+  height: 20px;
+
+  top: -10px;
+  left: 50%;
+
+  transform: translateX(-50%) rotate(-3deg);
+
+  background: rgba(214, 185, 158, 0.6);
+
+  z-index: 2;
+}
+
+
+/* Background circle */
+
+.home-hero-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  background: #e8d4ce;
+
+  opacity: 0.4;
+
+  top: 30px;
+  right: -80px;
+
+  z-index: -1;
+}
+
+.home-hero-card:hover {
+  transform: rotate(0deg) translateY(-8px);
+
+  box-shadow:
+    0 25px 50px rgba(41, 40, 39, 0.13);
+}
+
+.home-hero-card .home-step-number {
+  display: block;
+
+  margin-bottom: 55px;
+
+  color: #b9786e;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.home-hero-card h3 {
+  margin: 0 0 12px;
+
+  color: #292827;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 34px;
+
+  line-height: 1.2;
+}
+
+.home-hero-card p {
+  max-width: 300px;
+
+  margin: 0;
+
+  color: #77716b;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.home-intro {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 105px 40px;
+
+  border-top: 1px solid #ded8cf;
+}
+
+.home-section-label {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: #b9786e;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.home-intro-content {
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 80px;
+}
+
+.home-intro h2 {
+  margin: 0;
+
+  color: #292827;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(40px, 5vw, 62px);
+
+  line-height: 1.05;
+
+  letter-spacing: -1.5px;
+}
+
+.home-intro p {
+  align-self: end;
+
+  margin: 0;
+
+  max-width: 500px;
+
+  color: #77716b;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================
+   HOW IT WORKS
+========================================= */
+
+.home-how {
+  padding: 110px 40px;
+
+  background: #eee8e1;
+
+  border-top: 1px solid #ded8cf;
+
+  border-bottom: 1px solid #ded8cf;
+}
+
+.home-section-heading,
+.home-steps {
+  max-width: 1180px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-section-heading h2 {
+  margin: 0;
+
+  color: #292827;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(40px, 5vw, 58px);
+
+  line-height: 1;
+
+  letter-spacing: -1.5px;
+}
+
+.home-steps {
+  margin-top: 65px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.home-step {
+  position: relative;
+
+  min-height: 280px;
+
+  padding: 30px;
+
+  background: #fffdf9;
+
+  border: 1px solid #ded8cf;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 10px 25px rgba(41, 40, 39, 0.045);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Tape */
+
+.home-step::before {
+  content: "";
+
+  position: absolute;
+
+  width: 65px;
+  height: 20px;
+
+  top: -10px;
+  left: 50%;
+
+  transform: translateX(-50%) rotate(-2deg);
+
+  background: rgba(214, 185, 158, 0.6);
+
+  z-index: 2;
+}
+
+.home-step:nth-child(2)::before {
+  transform: translateX(-50%) rotate(3deg);
+}
+
+.home-step:nth-child(3)::before {
+  transform: translateX(-50%) rotate(-3deg);
+}
+
+
+/* Card rotations */
+
+.home-step:nth-child(1) {
+  transform: rotate(-1deg);
+}
+
+.home-step:nth-child(2) {
+  transform: rotate(0.7deg);
+}
+
+.home-step:nth-child(3) {
+  transform: rotate(-0.5deg);
+}
+
+
+/* Hover */
+
+.home-step:hover {
+  transform: translateY(-8px) rotate(0deg);
+
+  box-shadow:
+    0 20px 35px rgba(41, 40, 39, 0.10);
+}
+
+.home-step-number {
+  display: block;
+
+  margin-bottom: 45px;
+
+  color: #b9786e;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.home-step h3 {
+  margin: 0 0 12px;
+
+  color: #292827;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 28px;
+
+  line-height: 1.2;
+}
+
+.home-step p {
+  max-width: 300px;
+
+  margin: 0;
+
+  color: #77716b;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   MEMORY TICKET SECTION
+========================================= */
+
+.home-ticket-section {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 120px 40px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 90px;
+}
+
+.home-ticket-copy h2 {
+  margin: 0 0 25px;
+
+  color: #292827;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(42px, 5vw, 62px);
+
+  line-height: 1;
+
+  letter-spacing: -1.5px;
+}
+
+.home-ticket-copy p {
+  max-width: 500px;
+
+  margin: 0 0 28px;
+
+  color: #77716b;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+.home-text-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #292827;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  border-bottom: 1px solid #292827;
+
+  padding-bottom: 5px;
+
+  transition: 0.25s ease;
+}
+
+.home-text-link span {
+  font-size: 17px;
+
+  transition: transform 0.25s ease;
+}
+
+.home-text-link:hover {
+  color: #b9786e;
+
+  border-color: #b9786e;
+}
+
+.home-text-link:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   MEMORY TICKET
+========================================= */
+
+.home-ticket {
+  position: relative;
+
+  padding: 45px 38px 35px;
+
+  min-height: 300px;
+
+  background: #fffdf9;
+
+  border: 1px solid #ded8cf;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 25px 50px rgba(41, 40, 39, 0.10),
+    0 5px 12px rgba(41, 40, 39, 0.04);
+
+  transform: rotate(3deg);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Tape */
+
+.home-ticket::before {
+  content: "";
+
+  position: absolute;
+
+  width: 90px;
+  height: 24px;
+
+  top: -13px;
+  left: 50%;
+
+  transform: translateX(-50%) rotate(-3deg);
+
+  background: rgba(214, 185, 158, 0.65);
+
+  z-index: 2;
+}
+
+
+/* ONLY ONE LINE — DASHED */
+
+.home-ticket::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 53%;
+
+  border-top: 1px dashed #d8d0c7;
+}
+
+.home-ticket:hover {
+  transform: rotate(0deg) translateY(-6px);
+
+  box-shadow:
+    0 30px 60px rgba(41, 40, 39, 0.13);
+}
+
+.home-ticket-small {
+  display: block;
+
+  margin-bottom: 42px;
+
+  color: #b9786e;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.home-ticket h3 {
+  margin: 0 0 24px;
+
+  color: #292827;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 35px;
+
+  line-height: 1.1;
+}
+
+
+/* No straight line */
+
+.home-ticket-line {
+  width: 100%;
+
+  margin-bottom: 22px;
+
+  border-top: none;
+}
+
+.home-ticket-details {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-bottom: 55px;
+}
+
+.home-ticket-details span {
+  color: #77716b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.home-ticket-bottom {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  color: #a0786e;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.home-final {
+  position: relative;
+
+  padding: 120px 40px;
+
+  text-align: center;
+
+  background: #292827;
+
+  color: #fffdf9;
+
+  overflow: hidden;
+}
+
+.home-final::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  background: #b9786e;
+
+  top: -180px;
+  right: -100px;
+
+  opacity: 0.12;
+}
+
+.home-final::after {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  border-radius: 50%;
+
+  background: #d9e3da;
+
+  bottom: -150px;
+  left: -80px;
+
+  opacity: 0.08;
+}
+
+.home-final .home-section-label {
+  position: relative;
+
+  color: #c8a39c;
+
+  z-index: 1;
+}
+
+.home-final h2 {
+  position: relative;
+
+  margin: 0 0 22px;
+
+  color: #fffdf9;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(44px, 6vw, 70px);
+
+  line-height: 1;
+
+  letter-spacing: -1.5px;
+
+  z-index: 1;
+}
+
+.home-final p {
+  position: relative;
+
+  max-width: 450px;
+
+  margin: 0 auto 32px;
+
+  color: #c8c2ba;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  z-index: 1;
+}
+
+.home-final .home-primary-button {
+  position: relative;
+
+  background: #fffdf9;
+
+  color: #292827;
+
+  border-color: #fffdf9;
+
+  z-index: 1;
+}
+
+.home-final .home-primary-button:hover {
+  background: #e8d4ce;
+
+  border-color: #e8d4ce;
+
+  color: #292827;
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes homeFadeUp {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .home-hero {
+    min-height: auto;
+  }
+
+  .home-hero-content {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding: 70px 0 90px;
+  }
+
+  .home-hero-card {
+    max-width: 430px;
+
+    justify-self: center;
+  }
+
+  .home-intro-content {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .home-steps {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .home-step:nth-child(n) {
+    transform: rotate(0deg);
+  }
+
+  .home-ticket-section {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+  }
+
+  .home-ticket {
+    max-width: 520px;
+
+    width: 100%;
+
+    margin: 0 auto;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .home-navbar {
+    padding: 15px 20px;
+  }
+
+  .home-brand img {
+    width: 120px;
+
+    height: 65px;
+
+    transform: translateX(-8px);
+  }
+
+  .home-nav-links {
+    gap: 12px;
+  }
+
+  .home-nav-links a {
+    font-size: 9px;
+  }
+
+  .home-nav-button {
+    padding: 9px 13px;
+  }
+
+  .home-hero {
+    padding: 0 20px;
+  }
+
+  .home-hero-content {
+    padding: 60px 0 80px;
+
+    gap: 35px;
+  }
+
+  .home-hero h1 {
+    font-size: 48px;
+
+    letter-spacing: -1px;
+  }
+
+  .home-hero-content p {
+    font-size: 14px;
+  }
+
+  .home-actions {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .home-primary-button,
+  .home-secondary-button {
+    width: 100%;
+
+    max-width: 260px;
+  }
+
+  .home-hero-card {
+    min-height: 280px;
+
+    padding: 28px;
+  }
+
+  .home-hero-card h3 {
+    font-size: 30px;
+  }
+
+  .home-intro {
+    padding: 80px 20px;
+  }
+
+  .home-intro h2 {
+    font-size: 42px;
+  }
+
+  .home-how {
+    padding: 80px 20px;
+  }
+
+  .home-section-heading h2 {
+    font-size: 42px;
+  }
+
+  .home-ticket-section {
+    padding: 90px 20px;
+  }
+
+  .home-ticket-copy h2 {
+    font-size: 44px;
+  }
+
+  .home-ticket {
+    padding: 38px 28px 30px;
+
+    transform: rotate(2deg);
+  }
+
+  .home-final {
+    padding: 100px 20px;
+  }
+
+  .home-final h2 {
+    font-size: 45px;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .home-nav-links a:first-child {
+    display: none;
+  }
+
+}
+
+
+/* =========================================
+   HERO CARD CIRCLE
+========================================= */
+
+.home-hero-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  background: #e8d4ce;
+
+  opacity: 0.38;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-38%, -50%);
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   MEMORY TICKET LINE
+========================================= */
+
+.home-ticket::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 46%;
+
+  border-top: 1px dashed #d8d0c7;
+}
+
+
+/* Hide the extra straight line */
+
+.home-ticket-line {
+  display: none;
+}
+
+
+/* =========================================
+   HERO CARD — BETTER CIRCLE POSITION
+========================================= */
+
+.home-hero-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 230px;
+  height: 230px;
+
+  border-radius: 50%;
+
+  background: #e8d4ce;
+
+  opacity: 0.38;
+
+  top: 50%;
+  right: -105px;
+
+  transform: translateY(-50%);
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   MEMORY TICKET — DASHED LINE
+========================================= */
+
+.home-ticket::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 46%;
+
+  border-top: 1px dashed #d8d0c7;
+}
+
+.home-ticket-line {
+  display: none;
+}
+
+
+/* =========================================
+   HERO CARD — CIRCLE POSITION
+========================================= */
+
+.home-hero-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  background: #e8d4ce;
+
+  opacity: 0.35;
+
+  top: -55px;
+  right: -55px;
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   MEMORY TICKET
+========================================= */
+
+.home-ticket::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 46%;
+
+  border-top: 1px dashed #d8d0c7;
+}
+
+.home-ticket-line {
+  display: none;
+}
+
+
+/* =========================================
+   HERO CARD — SUBTLE BOTTOM CIRCLE
+========================================= */
+
+.home-hero-card {
+  overflow: hidden;
+}
+
+.home-hero-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  border-radius: 50%;
+
+  background: #e8d4ce;
+
+  opacity: 0.45;
+
+  right: -115px;
+  bottom: -125px;
+
+  z-index: 0;
+}
+
+
+/* Keep card content above the circle */
+
+.home-hero-card > * {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   MEMORY TICKET — DASHED LINE
+========================================= */
+
+.home-ticket::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 46%;
+
+  border-top: 1px dashed #d8d0c7;
+}
+
+.home-ticket-line {
+  display: none;
+}
+
+
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="/stylesheets/partials.css">
+
+<main class="home-page">
+
+  <!-- NAVBAR -->
+  <nav class="home-navbar">
+    <a href="/" class="home-brand">
+      <img src="/images/logo.png" alt="Memoticket">
+    </a>
+    <div class="home-nav-links">
+      <a href="/about">About</a>
+      <a href="/auth/sign-in">Sign In</a>
+      <a href="/auth/sign-up" class="home-nav-button">Create Account</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="home-hero">
+    <div class="home-hero-content">
+      
+      <!-- Hero Text -->
+      <div class="home-hero-text">
+        <span class="home-eyebrow">YOUR MEMORIES. YOUR STORIES.</span>
+        <h1>Keep the moments<br>worth remembering.</h1>
+        <p>Memoticket is a personal space for collecting the moments, places, and stories that matter to you.</p>
+        
+        <div class="home-actions">
+          <a href="/auth/sign-up" class="home-primary-button">
+            Create Your Account <span>→</span>
+          </a>
+          <a href="/auth/sign-in" class="home-secondary-button">
+            Sign In
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Card -->
+      <article class="home-hero-card">
+        <span class="home-step-number">01</span>
+        <h3>Create</h3>
+        <p>Create a collection for a trip, event, place, or any chapter worth remembering.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- INTRO SECTION -->
+  <section class="home-intro">
+    <div class="home-section-label">WHY MEMOTICKET</div>
+    <div class="home-intro-content">
+      <h2>Every memory has<br>a story behind it.</h2>
+      <p>Photos capture a moment. Memoticket helps you keep everything that made that moment special.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS SECTION -->
+  <section class="home-how">
+    <div class="home-section-heading">
+      <span class="home-section-label">HOW IT WORKS</span>
+      <h2>Three simple steps.</h2>
+    </div>
+
+    <div class="home-steps">
+      <article class="home-step">
+        <span class="home-step-number">01</span>
+        <h3>Create</h3>
+        <p>Create a collection for a trip, event, place, or any chapter worth remembering.</p>
+      </article>
+
+      <article class="home-step">
+        <span class="home-step-number">02</span>
+        <h3>Save</h3>
+        <p>Add your memories with dates, locations, descriptions, photos, and personal details.</p>
+      </article>
+
+      <article class="home-step">
+        <span class="home-step-number">03</span>
+        <h3>Revisit</h3>
+        <p>Return to your collections whenever you want and relive the moments that matter.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- MEMORY TICKET SECTION -->
+  <section class="home-ticket-section">
+    <div class="home-ticket-copy">
+      <span class="home-section-label">THE MEMOTICKET WAY</span>
+      <h2>Turn a moment<br>into a memory.</h2>
+      <p>Give every important moment its own place. Keep the details, the story, and the feeling together in one collection.</p>
+      <a href="/auth/sign-up" class="home-text-link">
+        Start collecting <span>→</span>
+      </a>
+    </div>
+
+    <div class="home-ticket">
+      <span class="home-ticket-small">MEMOTICKET</span>
+      <h3>MEMORY PASS</h3>
+      <div class="home-ticket-line"></div>
+      <div class="home-ticket-details">
+        <span>ONE MOMENT</span>
+        <span>ONE STORY</span>
+        <span>ONE PLACE</span>
+      </div>
+      <div class="home-ticket-bottom">
+        <span>ADMIT ONE</span>
+        <span>✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA SECTION -->
+  <section class="home-final">
+    <span class="home-section-label">YOUR NEXT MEMORY</span>
+    <h2>Ready to keep<br>your next memory?</h2>
+    <p>Start building your personal collection of moments.</p>
+    <a href="/auth/sign-up" class="home-primary-button">
+      Create Your Account <span>→</span>
+    </a>
+  </section>
+
+</main>
+
+<%- include('partials/_footer') %>
