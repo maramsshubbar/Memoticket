@@ -29,6 +29,12 @@
           </p>
         </div>
 
+        <% if (error) { %>
+          <div class="auth-error">
+            <%= error %>
+          </div>
+        <% } %>
+
         <form action="/auth/sign-up" method="POST" class="auth-form">
 
           <div class="auth-field">

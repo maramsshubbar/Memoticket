@@ -5,9 +5,10 @@ const User = require('../models/user');
 const SALT_ROUDS = 10;
 
 const signup = async (req, res) => {
-  res.render('auth/sign-up.ejs');
+  res.render('auth/sign-up.ejs', {
+    error: null,
+  });
 };
-
 const register = async (req, res) => {
   try {
     const userInDatabase = await User.findOne({
@@ -15,11 +16,15 @@ const register = async (req, res) => {
     });
 
     if (userInDatabase) {
-      return res.send('Invalid input');
+      return res.render('auth/sign-up.ejs', {
+        error: 'Username is already taken.',
+      });
     }
 
     if (req.body.password !== req.body.confirmPassword) {
-      return res.send('Invalid input');
+      return res.render('auth/sign-up.ejs', {
+        error: 'Passwords do not match.',
+      });
     }
 
     const hashedPassword = bcrypt.hashSync(
@@ -37,16 +42,21 @@ const register = async (req, res) => {
     };
 
     req.session.save(() => {
-      res.redirect('/');
-    });
+  res.redirect('/collections');
+});
   } catch (err) {
     console.log(err);
-    res.send('something went wrong');
+
+    res.render('auth/sign-up.ejs', {
+      error: 'Something went wrong. Please try again.',
+    });
   }
 };
 
 const signin = async (req, res) => {
-  res.render('auth/sign-in.ejs');
+  res.render('auth/sign-in.ejs', {
+    error: null,
+  });
 };
 
 const login = async (req, res) => {
@@ -59,7 +69,9 @@ const login = async (req, res) => {
   console.log('USER FOUND:', userInDatabase);
 
   if (!userInDatabase) {
-    return res.send('Invalid credentials');
+    return res.render('auth/sign-in.ejs', {
+      error: 'Invalid username or password.',
+    });
   }
 
   const passwordMatch = bcrypt.compareSync(
@@ -70,7 +82,9 @@ const login = async (req, res) => {
   console.log('PASSWORD MATCH:', passwordMatch);
 
   if (!passwordMatch) {
-    return res.send('Invalid credentials');
+    return res.render('auth/sign-in.ejs', {
+      error: 'Invalid username or password.',
+    });
   }
 
   req.session.user = {
