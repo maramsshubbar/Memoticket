@@ -1,171 +1,196 @@
 <link rel="stylesheet" href="/stylesheets/style.css">
+
 <link rel="stylesheet" href="/stylesheets/partials.css">
+
 <%- include('../partials/_navbar') %>
+
 <main class="memories-page">
-<section class="memories-header">
-<div class="memories-header-text">
 
-  <span class="memories-eyebrow">
-    YOUR MEMORIES
-  </span>
+  <section class="memories-header">
 
-  <h1>
-    Moments worth<br>
-    remembering.
-  </h1>
+    <div class="memories-header-text">
 
-  <p>
-    All your memories in one place — across every collection,
-    every moment, and every story.
-  </p>
+      <span class="memories-eyebrow">
+        YOUR MEMORIES
+      </span>
 
-</div>
+      <h1>
+        Moments worth<br>
+        remembering.
+      </h1>
 
-<div class="memories-count">
-  <span class="count-number">
-    <%= memories.length %>
-  </span>
+      <p>
+        All your memories in one place — across every collection,
+        every moment, and every story.
+      </p>
 
-  <span class="count-label">
-    MEMORIES<br>
-    SAVED
-  </span>
-</div>
-</section>
-<section class="memories-content">
-<% if (memories.length === 0) { %>
+    </div>
 
-  <div class="empty-memories">
+    <div class="memories-count">
 
-    <span class="empty-icon">✦</span>
+      <span class="count-number">
+        <%= memories.length %>
+      </span>
 
-    <h2>
-      No memories yet.
-    </h2>
+      <span class="count-label">
+        MEMORIES<br>
+        SAVED
+      </span>
 
-    <p>
-      Your next story could start here.
-    </p>
+    </div>
 
-    <a href="/collections" class="memories-button">
-      Go to Collections
-      <span>→</span>
-    </a>
+  </section>
 
-  </div>
+  <section class="memories-content">
 
-<% } else { %>
+    <% if (memories.length === 0) { %>
 
-  <div class="memories-grid">
+      <div class="empty-memories">
 
-    <% memories.forEach((memory, index) => { %>
+        <span class="empty-icon">✦</span>
 
-      <article class="memory-card">
+        <h2>
+          No memories yet.
+        </h2>
 
-        <% if (memory.imageUrl) { %>
+        <p>
+          Your next story could start here.
+        </p>
 
-          <div class="memory-card-image">
+        <a href="/collections" class="memories-button">
+          Go to Collections
+          <span>→</span>
+        </a>
 
-            <img
-              src="<%= memory.imageUrl %>"
-              alt="<%= memory.title %>"
-            >
+      </div>
 
-          </div>
+    <% } else { %>
 
-        <% } else { %>
+      <div class="memories-grid">
 
-          <div class="memory-card-placeholder">
-            <span>✦</span>
-          </div>
+        <% memories.forEach((memory, index) => { %>
 
-        <% } %>
+          <article class="memory-card">
 
+            <% if (memory.imageUrl) { %>
 
-        <div class="memory-card-content">
+              <div class="memory-card-image">
 
-          <div class="memory-card-top">
+                <img
+                  src="<%= memory.imageUrl %>"
+                  alt="<%= memory.title %>"
+                >
 
-            <span class="memory-card-number">
-              <%= String(index + 1).padStart(2, '0') %>
-            </span>
+              </div>
 
-            <% if (memory.category) { %>
+            <% } else { %>
 
-              <span class="memory-card-category">
-                <%= memory.category %>
-              </span>
+              <div class="memory-card-placeholder">
+                <span>✦</span>
+              </div>
 
             <% } %>
 
-          </div>
+            <div class="memory-card-content">
 
+              <div class="memory-card-top">
 
-          <h2>
-            <%= memory.title %>
-          </h2>
+                <span class="memory-card-number">
+                  <%= String(index + 1).padStart(2, '0') %>
+                </span>
 
+                <% if (memory.category) { %>
 
-          <% if (memory.date) { %>
+                  <span class="memory-card-category">
+                    <%= memory.category %>
+                  </span>
 
-            <p class="memory-card-date">
-              <%= new Date(memory.date).toLocaleDateString('en-GB', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric'
-              }) %>
-            </p>
+                <% } %>
 
-          <% } %>
+              </div>
 
+              <h2>
+                <%= memory.title %>
+              </h2>
 
-          <% if (memory.location) { %>
+              <% if (memory.date) { %>
 
-            <p class="memory-card-location">
-              <span>⌖</span>
-              <%= memory.location %>
-            </p>
+                <p class="memory-card-date">
+                  <%= new Date(memory.date).toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                  }) %>
+                </p>
 
-          <% } %>
+              <% } %>
 
+              <% if (memory.location) { %>
 
-          <% if (memory.description) { %>
+                <p class="memory-card-location">
+                  <span>⌖</span>
+                  <%= memory.location %>
+                </p>
 
-            <p class="memory-card-description">
-              <%= memory.description %>
-            </p>
+              <% } %>
 
-          <% } %>
+              <% if (memory.description) { %>
 
+                <p class="memory-card-description">
+                  <%= memory.description %>
+                </p>
 
-          <div class="memory-card-footer">
+              <% } %>
 
-            <% if (memory.rating) { %>
+              <div class="memory-card-footer">
 
-              <span class="memory-rating">
-                ★ <%= memory.rating %>/5
-              </span>
+                <% if (memory.rating) { %>
 
-            <% } %>
+                  <span class="memory-rating">
+                    ★ <%= memory.rating %>/5
+                  </span>
 
-            <a
-              href="/collections/<%= memory.collection._id %>/memories/<%= memory._id %>/edit"
-              class="memory-edit-link"
-            >
-              Edit →
-            </a>
+                <% } %>
 
-          </div>
+                <div class="memory-card-actions">
 
-        </div>
+                  <a
+                    href="/collections/<%= memory.collection._id %>/memories/<%= memory._id %>/edit"
+                    class="memory-edit-link"
+                  >
+                    Edit →
+                  </a>
 
-      </article>
+                  <form
+                    action="/collections/<%= memory.collection._id %>/memories/<%= memory._id %>?_method=DELETE"
+                    method="POST"
+                  >
 
-    <% }) %>
+                    <button
+                      type="submit"
+                      class="memory-delete-button"
+                    >
+                      Delete
+                    </button>
 
-  </div>
+                  </form>
 
-<% } %>
-</section>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        <% }) %>
+
+      </div>
+
+    <% } %>
+
+  </section>
+
 </main>
+
 <%- include('../partials/_footer') %>

@@ -14,13 +14,11 @@
 
   </section>
 
-
   <section class="memory-form-card">
 
     <div class="form-card-tape"></div>
 
     <p class="form-card-label">MEMORY DETAILS</p>
-
 
     <form
       action="/collections/<%= collectionId %>/memories"
@@ -29,6 +27,7 @@
     >
 
       <!-- TITLE + DATE -->
+
       <div class="memory-form-row">
 
         <div class="memory-form-group">
@@ -46,7 +45,6 @@
           >
 
         </div>
-
 
         <div class="memory-form-group">
 
@@ -66,6 +64,7 @@
 
 
       <!-- LOCATION + CATEGORY -->
+
       <div class="memory-form-row">
 
         <div class="memory-form-group">
@@ -82,7 +81,6 @@
           >
 
         </div>
-
 
         <div class="memory-form-group">
 
@@ -103,6 +101,7 @@
 
 
       <!-- RATING + TICKET -->
+
       <div class="memory-form-row">
 
         <div class="memory-form-group">
@@ -121,7 +120,6 @@
           >
 
         </div>
-
 
         <div class="memory-form-group">
 
@@ -142,6 +140,7 @@
 
 
       <!-- DESCRIPTION -->
+
       <div class="memory-form-group">
 
         <label for="description">
@@ -158,6 +157,7 @@
 
 
       <!-- IMAGE UPLOAD -->
+
       <div class="memory-form-group">
 
         <label>
@@ -211,6 +211,7 @@
 
 
       <!-- ACTIONS -->
+
       <div class="form-actions">
 
         <a
@@ -219,7 +220,6 @@
         >
           ← Cancel
         </a>
-
 
         <button
           class="create-collection-button"
@@ -251,6 +251,7 @@
       const imageURL = URL.createObjectURL(file);
 
       uploadPreview.innerHTML = `
+
         <img
           src="${imageURL}"
           alt="Selected memory image"
@@ -272,6 +273,7 @@
           </span>
 
         </div>
+
       `;
 
       uploadBox.classList.add("has-image");
