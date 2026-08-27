@@ -3,11 +3,13 @@
 <main class="collection-show-page">
 
   <!-- BACK -->
+
   <a href="/collections" class="collection-back">
     ← My Collections
   </a>
 
   <!-- COLLECTION HEADER -->
+
   <section class="collection-show-header">
 
     <div class="collection-header-content">
@@ -21,14 +23,17 @@
       </h1>
 
       <% if (collection.description) { %>
+
         <p class="collection-description">
           <%= collection.description %>
         </p>
+
       <% } %>
 
     </div>
 
     <!-- COLLECTION ACTIONS -->
+
     <div class="collection-actions">
 
       <a
@@ -42,12 +47,14 @@
         action="/collections/<%= collection._id %>?_method=DELETE"
         method="POST"
       >
+
         <button
           type="submit"
           class="delete-collection-button"
         >
           Delete
         </button>
+
       </form>
 
     </div>
@@ -56,6 +63,7 @@
 
 
   <!-- MEMORIES SECTION -->
+
   <section class="memories-section">
 
     <div class="memories-header">
@@ -91,6 +99,7 @@
           <article class="memory-show-card">
 
             <!-- CARD TOP -->
+
             <div class="memory-card-top">
 
               <span class="memory-card-label">
@@ -109,6 +118,7 @@
 
 
             <!-- MEMORY IMAGE -->
+
             <% if (memory.imageUrl) { %>
 
               <div class="memory-card-image">
@@ -124,12 +134,12 @@
 
 
             <!-- MEMORY CONTENT -->
+
             <div class="memory-card-content">
 
               <h3>
                 <%= memory.title %>
               </h3>
-
 
               <% if (memory.location) { %>
 
@@ -139,7 +149,6 @@
 
               <% } %>
 
-
               <% if (memory.description) { %>
 
                 <p class="memory-description">
@@ -147,7 +156,6 @@
                 </p>
 
               <% } %>
-
 
               <% if (memory.category || memory.rating) { %>
 
@@ -160,7 +168,6 @@
                     </span>
 
                   <% } %>
-
 
                   <% if (memory.rating) { %>
 
@@ -178,6 +185,7 @@
 
 
             <!-- CARD FOOTER -->
+
             <div class="memory-card-footer">
 
               <a
@@ -186,6 +194,20 @@
               >
                 Edit Memory
               </a>
+
+              <form
+                action="/collections/<%= collection._id %>/memories/<%= memory._id %>?_method=DELETE"
+                method="POST"
+              >
+
+                <button
+                  type="submit"
+                  class="memory-delete-button"
+                >
+                  Delete Memory
+                </button>
+
+              </form>
 
             </div>
 

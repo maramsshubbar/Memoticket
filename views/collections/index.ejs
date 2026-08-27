@@ -1,19 +1,29 @@
 <link rel="stylesheet" href="/stylesheets/style.css">
+
 <link rel="stylesheet" href="/stylesheets/partials.css">
 
+<!-- Navbar -->
+
 <%- include('../partials/_navbar') %>
+
 <main class="collections-page">
 
   <section class="collections-header">
 
     <div>
-      <p class="eyebrow">YOUR MEMORIES</p>
 
-      <h1>My Collections</h1>
+      <p class="eyebrow">
+        YOUR MEMORIES
+      </p>
+
+      <h1>
+        My Collections
+      </h1>
 
       <p class="page-description">
         Keep your favorite memories organized in one beautiful place.
       </p>
+
     </div>
 
     <a class="create-button" href="/collections/new">
@@ -21,7 +31,6 @@
     </a>
 
   </section>
-
 
   <section class="collections-grid">
 
@@ -34,16 +43,20 @@
           href="/collections/<%= collection._id %>"
         >
 
-          <h2><%= collection.name %></h2>
+          <h2>
+            <%= collection.name %>
+          </h2>
 
           <% if (collection.description) { %>
 
-            <p><%= collection.description %></p>
+            <p>
+              <%= collection.description %>
+            </p>
 
           <% } %>
 
           <span class="view-collection">
-            View Collection →
+            View Collection 
           </span>
 
         </a>
@@ -55,4 +68,5 @@
   </section>
 
 </main>
+
 <%- include('../partials/_footer') %>
