@@ -3163,381 +3163,225 @@ body {
 
 
 
-
-
-
-/* memories 
-
-
-/* ================================
-ALL MEMORIES PAGE
-================================ */
-
-.all-memories-page {
-max-width: 1180px;
-margin: 0 auto;
-padding: 70px 30px 100px;
-}
-
-/* HEADER */
-
-.all-memories-header {
-display: flex;
-justify-content: space-between;
-align-items: flex-end;
-margin-bottom: 55px;
-gap: 30px;
-}
-
-.all-memories-header h1 {
-margin: 8px 0 12px;
-font-size: 58px;
-line-height: 1;
-letter-spacing: -2px;
-}
-
-.all-memories-header p {
-margin: 0;
-color: #777;
-font-size: 16px;
-}
-
-/* MEMORY COUNT */
-
-.memory-count {
-min-width: 105px;
-height: 105px;
-border: 1px solid #e6e6e6;
-border-radius: 50%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background: #fff;
-}
-
-.memory-count span {
-font-size: 30px;
-font-weight: 700;
-line-height: 1;
-}
-
-.memory-count small {
-margin-top: 7px;
-font-size: 9px;
-letter-spacing: 1.5px;
-color: #777;
-}
-
-/* MEMORIES GRID */
-
-.memories-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 28px;
-}
-
-/* MEMORY CARD */
-
-.memory-card {
-background: #fff;
-border: 1px solid #e6e6e6;
-border-radius: 4px;
-overflow: hidden;
-transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.memory-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
-}
-
-/* IMAGE */
-
-.memory-card-image {
-width: 100%;
-height: 230px;
-overflow: hidden;
-background: #f4f4f4;
-}
-
-.memory-card-image img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
-}
-
-.memory-card-placeholder {
-display: flex;
-align-items: center;
-justify-content: center;
-background: #f7d44c;
-}
-
-.memory-card-placeholder span {
-font-size: 11px;
-letter-spacing: 3px;
-font-weight: 700;
-}
-
-/* CARD CONTENT */
-
-.memory-card-content {
-padding: 24px;
-}
-
-.memory-card-top {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 13px;
-}
-
-.memory-category {
-font-size: 10px;
-letter-spacing: 1.5px;
-text-transform: uppercase;
-color: #888;
-}
-
-.memory-rating {
-font-size: 12px;
-font-weight: 700;
-}
-
-.memory-card h2 {
-margin: 0 0 9px;
-font-size: 25px;
-line-height: 1.1;
-}
-
-.memory-date {
-margin: 0 0 9px;
-font-size: 13px;
-color: #777;
-}
-
-.memory-location {
-margin: 0 0 17px;
-font-size: 13px;
-color: #555;
-}
-
-.memory-location span {
-margin-right: 5px;
-}
-
-.memory-description {
-margin: 0;
-color: #777;
-font-size: 14px;
-line-height: 1.6;
-
-display: -webkit-box;
--webkit-line-clamp: 3;
--webkit-box-orient: vertical;
-overflow: hidden;
-}
-
-/* CARD FOOTER */
-
-.memory-card-footer {
-margin-top: 22px;
-padding-top: 18px;
-border-top: 1px solid #e6e6e6;
-}
-
-.view-memory-link {
-text-decoration: none;
-color: #111;
-font-size: 12px;
-font-weight: 700;
-letter-spacing: 0.5px;
-}
-
-.view-memory-link:hover {
-text-decoration: underline;
-}
-
-/* EMPTY MEMORIES */
-
-.empty-memories {
-text-align: center;
-border: 1px dashed #d8d8d8;
-padding: 90px 30px;
-}
-
-.empty-memory-icon {
-font-size: 35px;
-margin-bottom: 20px;
-}
-
-.empty-memories h2 {
-margin: 0 0 10px;
-font-size: 30px;
-}
-
-.empty-memories p {
-color: #777;
-margin-bottom: 28px;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-
-.memories-grid {
-grid-template-columns: repeat(2, 1fr);
-}
-
-}
-
-@media (max-width: 600px) {
-
-.all-memories-page {
-padding: 45px 20px 70px;
-}
-
-.all-memories-header {
-align-items: flex-start;
-}
-
-.all-memories-header h1 {
-font-size: 42px;
-}
-
-.memory-count {
-min-width: 80px;
-height: 80px;
-}
-
-.memories-grid {
-grid-template-columns: 1fr;
-}
-
-}
-
-
-/*memories page */
-/* =====================================================
+/* =========================
    MEMORIES PAGE
-===================================================== */
+========================= */
 
 .memories-page {
+  position: relative;
   max-width: 1180px;
   margin: 0 auto;
-  padding: 65px 40px 100px;
+  padding: 75px 40px 100px;
 }
 
-/* =====================================================
+/* Soft background decoration */
+
+.memories-page::before {
+  content: "";
+  position: fixed;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: #eadbd5;
+  top: -170px;
+  right: -130px;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.memories-page::after {
+  content: "";
+  position: fixed;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: #dce4dc;
+  bottom: -130px;
+  left: -100px;
+  opacity: 0.65;
+  z-index: -1;
+}
+
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 .memories-header {
   display: flex;
-  align-items: flex-end;
   justify-content: space-between;
+  align-items: flex-end;
   gap: 40px;
-  margin-bottom: 45px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 60px;
+  padding-bottom: 0;
+  border-bottom: none;
+  animation: fadeUp 0.7s ease;
+}
+
+.memories-header-text {
+  max-width: 700px;
 }
 
 .memories-eyebrow {
-  display: block;
-  margin-bottom: 12px;
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 7px 13px;
+  border: 1px solid #d4c8bf;
+  border-radius: 30px;
+  color: #96796e;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.2em;
-  color: #aaa;
+  letter-spacing: 3px;
 }
 
 .memories-header h1 {
-  margin: 0 0 14px;
-  font-size: clamp(42px, 5vw, 64px);
-  line-height: 0.95;
-  letter-spacing: -0.05em;
-  font-weight: 700;
-  color: #222;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(44px, 6vw, 68px);
+  line-height: 1;
+  margin: 0 0 18px;
+  color: #292827;
 }
 
 .memories-header p {
-  max-width: 500px;
+  max-width: 510px;
   margin: 0;
+  color: #77716b;
   font-size: 15px;
-  line-height: 1.7;
-  color: #777;
+  line-height: 1.8;
 }
 
-/* =====================================================
-   HEADER BUTTON
-===================================================== */
+/* =========================
+   MEMORY COUNT
+========================= */
 
-.memories-header-button {
-  display: inline-flex;
+.memories-count {
+  display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 13px 18px;
-  color: #444;
-  background: #fff;
-  border: 1px solid #dedede;
-  text-decoration: none;
-  font-size: 10px;
+  gap: 12px;
+  padding-bottom: 8px;
+}
+
+.count-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  line-height: 1;
+  color: #292827;
+}
+
+.count-label {
+  color: #96796e;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  transition: all 0.25s ease;
+  letter-spacing: 2px;
+  line-height: 1.5;
 }
 
-.memories-header-button span {
-  font-size: 16px;
-  color: #999;
+/* =========================
+   MEMORIES CONTENT
+========================= */
+
+.memories-content {
+  width: 100%;
 }
 
-.memories-header-button:hover {
-  background: #f7d44c;
-  border-color: #f7d44c;
-  color: #333;
-}
-
-/* =====================================================
+/* =========================
    GRID
-===================================================== */
+========================= */
 
 .memories-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 42px 28px;
 }
 
-/* =====================================================
+/* =========================
    MEMORY CARD
-===================================================== */
+========================= */
 
 .memory-card {
   position: relative;
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid #e6e6e6;
+  min-height: 430px;
+  background: #fffdf9;
+  border: 1px solid #ded8cf;
+  border-radius: 8px;
+  overflow: visible;
+  box-shadow:
+    0 8px 20px rgba(41, 40, 39, 0.055),
+    0 2px 5px rgba(41, 40, 39, 0.035);
   transition:
-    transform 0.25s ease,
-    border-color 0.25s ease;
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  animation: cardIn 0.7s ease both;
 }
+
+/* Card rotations */
+
+.memory-card:nth-child(1) {
+  transform: rotate(-1deg);
+}
+
+.memory-card:nth-child(2) {
+  transform: rotate(1deg);
+}
+
+.memory-card:nth-child(3) {
+  transform: rotate(-0.5deg);
+}
+
+.memory-card:nth-child(4) {
+  transform: rotate(0.7deg);
+}
+
+.memory-card:nth-child(5) {
+  transform: rotate(-0.8deg);
+}
+
+.memory-card:nth-child(6) {
+  transform: rotate(0.4deg);
+}
+
+/* Hover */
 
 .memory-card:hover {
-  transform: translateY(-3px);
-  border-color: #d4d4d4;
+  transform: translateY(-10px) rotate(0deg) !important;
+  box-shadow:
+    0 22px 40px rgba(41, 40, 39, 0.11),
+    0 4px 8px rgba(41, 40, 39, 0.05);
 }
 
-/* =====================================================
+/* =========================
+   TAPE
+========================= */
+
+.memory-card::before {
+  content: "";
+  position: absolute;
+  width: 72px;
+  height: 21px;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  background: rgba(216, 190, 159, 0.62);
+  z-index: 5;
+}
+
+.memory-card:nth-child(2)::before {
+  transform: translateX(-50%) rotate(3deg);
+}
+
+.memory-card:nth-child(3)::before {
+  transform: translateX(-50%) rotate(-3deg);
+}
+
+/* =========================
    IMAGE
-===================================================== */
+========================= */
 
 .memory-card-image {
   width: 100%;
-  height: 215px;
+  height: 145px;
   overflow: hidden;
-  background: #f5f5f5;
+  background: #d8e0dc;
+  border-radius: 8px 8px 0 0;
 }
 
 .memory-card-image img {
@@ -3549,134 +3393,144 @@ grid-template-columns: 1fr;
 }
 
 .memory-card:hover .memory-card-image img {
-  transform: scale(1.025);
+  transform: scale(1.04);
 }
 
-/* =====================================================
-   IMAGE PLACEHOLDER
-===================================================== */
+/* Different image backgrounds */
+
+.memory-card:nth-child(2) .memory-card-image {
+  background: #d8e2e6;
+}
+
+.memory-card:nth-child(3) .memory-card-image {
+  background: #e1dbe5;
+}
+
+.memory-card:nth-child(4) .memory-card-image {
+  background: #eadbd5;
+}
+
+.memory-card:nth-child(5) .memory-card-image {
+  background: #dce3d5;
+}
+
+.memory-card:nth-child(6) .memory-card-image {
+  background: #e4ded1;
+}
+
+/* =========================
+   PLACEHOLDER
+========================= */
 
 .memory-card-placeholder {
   width: 100%;
-  height: 215px;
+  height: 145px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-  background: #f8f8f6;
+  background: linear-gradient(
+    135deg,
+    #d8e0dc,
+    #e7ddd8
+  );
+  color: rgba(41, 40, 39, 0.38);
+  border-radius: 8px 8px 0 0;
 }
 
-/* subtle ticket-style frame */
 .memory-card-placeholder::before {
-  content: "";
-  position: absolute;
-  width: 72%;
-  height: 62%;
-  border: 1px solid #dedede;
-  background: #fff;
-}
-
-/* little ticket detail */
-.memory-card-placeholder::after {
-  content: "MEMOTICKET";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 9px;
+  content: "MEMORY";
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.2em;
-  color: #b5b5b5;
+  letter-spacing: 5px;
 }
 
 .memory-card-placeholder span {
   display: none;
 }
 
-/* =====================================================
-   CONTENT
-===================================================== */
+/* =========================
+   CARD CONTENT
+========================= */
 
 .memory-card-content {
-  padding: 23px;
+  padding: 24px 25px 0;
 }
 
-/* =====================================================
-   TOP
-===================================================== */
+/* =========================
+   CARD TOP
+========================= */
 
 .memory-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 13px;
 }
 
-.memory-category {
+.memory-card-number {
+  color: #b0a49c;
   font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.16em;
-  color: #aaa;
+  letter-spacing: 2px;
+}
+
+.memory-card-category {
+  color: #96796e;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-.memory-rating {
-  font-size: 11px;
-  font-weight: 700;
-  color: #777;
-}
-
-/* =====================================================
+/* =========================
    TITLE
-===================================================== */
+========================= */
 
 .memory-card h2 {
   margin: 0 0 9px;
-  font-size: 23px;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  font-weight: 700;
-  color: #333;
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  line-height: 1.25;
+  color: #292827;
 }
 
-/* =====================================================
+/* =========================
    DATE
-===================================================== */
+========================= */
 
-.memory-date {
+.memory-card-date {
   margin: 0 0 7px;
+  color: #99908a;
   font-size: 11px;
-  color: #999;
 }
 
-/* =====================================================
+/* =========================
    LOCATION
-===================================================== */
+========================= */
 
-.memory-location {
+.memory-card-location {
   display: flex;
   align-items: center;
   gap: 6px;
   margin: 0;
+  color: #77716b;
   font-size: 11px;
-  color: #888;
 }
 
-.memory-location span {
+.memory-card-location span {
+  color: #a0786e;
   font-size: 12px;
-  color: #aaa;
 }
 
-/* =====================================================
+/* =========================
    DESCRIPTION
-===================================================== */
+========================= */
 
-.memory-description {
-  margin: 18px 0 0;
-  font-size: 12px;
-  line-height: 1.75;
-  color: #777;
+.memory-card-description {
+  margin: 16px 0 0;
+  color: #77716b;
+  font-size: 13px;
+  line-height: 1.7;
 
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -3684,28 +3538,28 @@ grid-template-columns: 1fr;
   overflow: hidden;
 }
 
-/* =====================================================
-   CARD FOOTER
-===================================================== */
+/* =========================
+   FOOTER
+========================= */
 
 .memory-card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 23px;
-  padding-top: 15px;
-  border-top: 1px solid #eeeeee;
+  margin: 23px 25px 0;
+  padding: 15px 0 20px;
+  border-top: 1px solid #eee8e2;
 }
 
-.memory-ticket-label {
-  font-size: 8px;
+.memory-rating {
+  color: #96796e;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.16em;
-  color: #b0b0b0;
+  letter-spacing: 1px;
 }
 
 .memory-edit-link {
-  color: #777;
+  color: #77716b;
   text-decoration: none;
   font-size: 10px;
   font-weight: 700;
@@ -3713,51 +3567,79 @@ grid-template-columns: 1fr;
 }
 
 .memory-edit-link:hover {
-  color: #c2a72f;
+  color: #c98278;
 }
 
-/* =====================================================
+/* =========================
    EMPTY STATE
-===================================================== */
+========================= */
 
-.memories-empty {
-  min-height: 400px;
+.empty-memories {
+  min-height: 390px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 
-  border: 1px solid #e6e6e6;
-  background: #fff;
+  background: #fffdf9;
+  border: 1px solid #ded8cf;
+  border-radius: 8px;
+
+  box-shadow:
+    0 8px 20px rgba(41, 40, 39, 0.055),
+    0 2px 5px rgba(41, 40, 39, 0.035);
 }
 
-.empty-number {
+.empty-icon {
   margin-bottom: 18px;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: #aaa;
+  color: #a0786e;
+  font-size: 22px;
 }
 
-.memories-empty h2 {
+.empty-memories h2 {
   margin: 0 0 12px;
+  font-family: 'Playfair Display', serif;
   font-size: 34px;
-  letter-spacing: -0.04em;
-  font-weight: 700;
-  color: #333;
+  line-height: 1.2;
+  color: #292827;
 }
 
-.memories-empty p {
+.empty-memories p {
   max-width: 420px;
   margin: 0 0 28px;
-  color: #888;
+  color: #77716b;
+  font-size: 13px;
   line-height: 1.7;
 }
 
-/* =====================================================
+.memories-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 21px;
+  background: #292827;
+  color: #fffdf8;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.memories-button:hover {
+  background: #c98278;
+  transform: translateY(-3px);
+  box-shadow: 0 9px 20px rgba(41, 40, 39, 0.12);
+}
+
+.memories-button span {
+  font-size: 16px;
+}
+
+/* =========================
    RESPONSIVE
-===================================================== */
+========================= */
 
 @media (max-width: 900px) {
   .memories-grid {
@@ -3767,7 +3649,7 @@ grid-template-columns: 1fr;
 
 @media (max-width: 650px) {
   .memories-page {
-    padding: 45px 20px 70px;
+    padding: 50px 20px 75px;
   }
 
   .memories-header {
@@ -3775,260 +3657,19 @@ grid-template-columns: 1fr;
     align-items: flex-start;
   }
 
+  .memories-count {
+    padding-bottom: 0;
+  }
+
   .memories-grid {
     grid-template-columns: 1fr;
   }
-}
 
-
-
-/* =====================================================
-   AUTH PAGES
-===================================================== */
-
-.auth-body {
-  margin: 0;
-  min-height: 100vh;
-  background: #f8f7f4;
-  color: #2f2e2b;
-}
-
-.auth-page {
-  width: 100%;
-  min-height: 100vh;
-  box-sizing: border-box;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 60px 20px;
-}
-
-/* BRAND */
-
-.auth-brand {
-  margin-bottom: 30px;
-}
-
-.auth-brand a {
-  color: #2f2e2b;
-  text-decoration: none;
-
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-}
-
-/* CARD */
-
-.auth-card {
-  width: 100%;
-  max-width: 430px;
-  box-sizing: border-box;
-
-  padding: 48px;
-
-  background: #ffffff;
-  border: 1px solid #e5e2dd;
-
-  box-shadow: 0 10px 35px rgba(50, 48, 43, 0.05);
-}
-
-.auth-card-signup {
-  max-width: 470px;
-}
-
-/* HEADER */
-
-.auth-heading {
-  margin-bottom: 34px;
-}
-
-.auth-heading > span {
-  display: block;
-
-  margin-bottom: 13px;
-
-  color: #a19d96;
-
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-}
-
-.auth-heading h1 {
-  margin: 0 0 13px;
-
-  color: #2f2e2b;
-
-  font-size: 43px;
-  line-height: 1;
-  letter-spacing: -0.05em;
-  font-weight: 700;
-}
-
-.auth-heading p {
-  max-width: 350px;
-
-  margin: 0;
-
-  color: #77736d;
-
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-/* FORM */
-
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.auth-field {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.auth-field label {
-  color: #55524d;
-
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
-.auth-field input {
-  width: 100%;
-  height: 48px;
-  box-sizing: border-box;
-
-  padding: 0 14px;
-
-  background: #faf9f7;
-  border: 1px solid #dedbd5;
-
-  color: #2f2e2b;
-
-  font-family: inherit;
-  font-size: 14px;
-
-  outline: none;
-
-  transition: all 0.2s ease;
-}
-
-.auth-field input:focus {
-  background: #ffffff;
-  border-color: #aaa59d;
-}
-
-/* BUTTON */
-
-.auth-submit {
-  width: 100%;
-  height: 50px;
-
-  margin-top: 7px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 18px;
-
-  background: #2f2e2b;
-  border: 1px solid #2f2e2b;
-
-  color: #ffffff;
-
-  font-family: inherit;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-
-  cursor: pointer;
-
-  transition: all 0.2s ease;
-}
-
-.auth-submit:hover {
-  background: #45433f;
-  border-color: #45433f;
-  transform: translateY(-1px);
-}
-
-.auth-submit span {
-  font-size: 17px;
-  font-weight: 400;
-}
-
-/* SWITCH */
-
-.auth-switch {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-
-  margin-top: 27px;
-  padding-top: 24px;
-
-  border-top: 1px solid #ece9e5;
-
-  color: #99958e;
-
-  font-size: 11px;
-}
-
-.auth-switch a {
-  color: #4c4944;
-
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.auth-switch a:hover {
-  text-decoration: underline;
-}
-
-/* BACK */
-
-.auth-back {
-  margin-top: 24px;
-
-  color: #99958e;
-
-  font-size: 11px;
-  font-weight: 600;
-
-  text-decoration: none;
-}
-
-.auth-back:hover {
-  color: #4c4944;
-}
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-  .auth-page {
-    padding: 35px 18px;
+  .memory-card {
+    min-height: auto;
   }
-
-  .auth-card {
-    padding: 35px 25px;
-  }
-
-  .auth-heading h1 {
-    font-size: 36px;
-  }
-
 }
+
 
 /* =========================================
    HOME PAGE
@@ -6603,127 +6244,353 @@ grid-template-columns: 1fr;
 }
 
 
-<link rel="stylesheet" href="/stylesheets/style.css">
-<link rel="stylesheet" href="/stylesheets/partials.css">
+.auth-error {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  border: 1px solid #e6c7c7;
+  border-radius: 8px;
+  background: #fff8f8;
+  color: #9b5c5c;
+  font-size: 14px;
+  text-align: center;
+}
 
-<main class="home-page">
 
-  <!-- NAVBAR -->
-  <nav class="home-navbar">
-    <a href="/" class="home-brand">
-      <img src="/images/logo.png" alt="Memoticket">
-    </a>
-    <div class="home-nav-links">
-      <a href="/about">About</a>
-      <a href="/auth/sign-in">Sign In</a>
-      <a href="/auth/sign-up" class="home-nav-button">Create Account</a>
-    </div>
-  </nav>
 
-  <!-- HERO SECTION -->
-  <section class="home-hero">
-    <div class="home-hero-content">
-      
-      <!-- Hero Text -->
-      <div class="home-hero-text">
-        <span class="home-eyebrow">YOUR MEMORIES. YOUR STORIES.</span>
-        <h1>Keep the moments<br>worth remembering.</h1>
-        <p>Memoticket is a personal space for collecting the moments, places, and stories that matter to you.</p>
-        
-        <div class="home-actions">
-          <a href="/auth/sign-up" class="home-primary-button">
-            Create Your Account <span>→</span>
-          </a>
-          <a href="/auth/sign-in" class="home-secondary-button">
-            Sign In
-          </a>
-        </div>
-      </div>
 
-      <!-- Hero Card -->
-      <article class="home-hero-card">
-        <span class="home-step-number">01</span>
-        <h3>Create</h3>
-        <p>Create a collection for a trip, event, place, or any chapter worth remembering.</p>
-      </article>
+.memory-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
-    </div>
-  </section>
+.memory-delete-button {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: #9b5c5c;
+  cursor: pointer;
+}
 
-  <!-- INTRO SECTION -->
-  <section class="home-intro">
-    <div class="home-section-label">WHY MEMOTICKET</div>
-    <div class="home-intro-content">
-      <h2>Every memory has<br>a story behind it.</h2>
-      <p>Photos capture a moment. Memoticket helps you keep everything that made that moment special.</p>
-    </div>
-  </section>
+.memory-delete-button:hover {
+  text-decoration: underline;
+}
 
-  <!-- HOW IT WORKS SECTION -->
-  <section class="home-how">
-    <div class="home-section-heading">
-      <span class="home-section-label">HOW IT WORKS</span>
-      <h2>Three simple steps.</h2>
-    </div>
 
-    <div class="home-steps">
-      <article class="home-step">
-        <span class="home-step-number">01</span>
-        <h3>Create</h3>
-        <p>Create a collection for a trip, event, place, or any chapter worth remembering.</p>
-      </article>
+.collection-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
 
-      <article class="home-step">
-        <span class="home-step-number">02</span>
-        <h3>Save</h3>
-        <p>Add your memories with dates, locations, descriptions, photos, and personal details.</p>
-      </article>
+.collection-edit-link,
+.collection-delete-button {
+  font: inherit;
+  cursor: pointer;
+}
 
-      <article class="home-step">
-        <span class="home-step-number">03</span>
-        <h3>Revisit</h3>
-        <p>Return to your collections whenever you want and relive the moments that matter.</p>
-      </article>
-    </div>
-  </section>
+.collection-edit-link {
+  text-decoration: none;
+}
 
-  <!-- MEMORY TICKET SECTION -->
-  <section class="home-ticket-section">
-    <div class="home-ticket-copy">
-      <span class="home-section-label">THE MEMOTICKET WAY</span>
-      <h2>Turn a moment<br>into a memory.</h2>
-      <p>Give every important moment its own place. Keep the details, the story, and the feeling together in one collection.</p>
-      <a href="/auth/sign-up" class="home-text-link">
-        Start collecting <span>→</span>
-      </a>
-    </div>
+.collection-delete-button {
+  border: none;
+  background: none;
+  padding: 0;
+  color: #9b5c5c;
+}
 
-    <div class="home-ticket">
-      <span class="home-ticket-small">MEMOTICKET</span>
-      <h3>MEMORY PASS</h3>
-      <div class="home-ticket-line"></div>
-      <div class="home-ticket-details">
-        <span>ONE MOMENT</span>
-        <span>ONE STORY</span>
-        <span>ONE PLACE</span>
-      </div>
-      <div class="home-ticket-bottom">
-        <span>ADMIT ONE</span>
-        <span>✦</span>
-      </div>
-    </div>
-  </section>
+.collection-delete-button:hover {
+  text-decoration: underline;
+}
 
-  <!-- FINAL CTA SECTION -->
-  <section class="home-final">
-    <span class="home-section-label">YOUR NEXT MEMORY</span>
-    <h2>Ready to keep<br>your next memory?</h2>
-    <p>Start building your personal collection of moments.</p>
-    <a href="/auth/sign-up" class="home-primary-button">
-      Create Your Account <span>→</span>
-    </a>
-  </section>
 
-</main>
+.memory-delete-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border: 1px solid #ded8cf;
+  border-radius: 4px;
+  background: transparent;
+  color: #8f6b67;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 
-<%- include('partials/_footer') %>
+.memory-delete-button:hover {
+  background: #f7eeee;
+  border-color: #cdb5b1;
+  text-decoration: none;
+}
+
+
+
+/* =====================================================
+   AUTH PAGES
+===================================================== */
+
+.auth-body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f8f7f4;
+  color: #2f2e2b;
+}
+
+.auth-page {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 20px;
+}
+
+/* BRAND */
+
+.auth-brand {
+  margin-bottom: 30px;
+}
+
+.auth-brand a {
+  color: #2f2e2b;
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+/* CARD */
+
+.auth-card {
+  width: 100%;
+  max-width: 430px;
+  box-sizing: border-box;
+
+  padding: 48px;
+
+  background: #ffffff;
+  border: 1px solid #e5e2dd;
+
+  box-shadow: 0 10px 35px rgba(50, 48, 43, 0.05);
+}
+
+.auth-card-signup {
+  max-width: 470px;
+}
+
+/* HEADER */
+
+.auth-heading {
+  margin-bottom: 34px;
+}
+
+.auth-heading > span {
+  display: block;
+
+  margin-bottom: 13px;
+
+  color: #a19d96;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.auth-heading h1 {
+  margin: 0 0 13px;
+
+  color: #2f2e2b;
+
+  font-size: 43px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+
+.auth-heading p {
+  max-width: 350px;
+
+  margin: 0;
+
+  color: #77736d;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* FORM */
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.auth-field label {
+  color: #55524d;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.auth-field input {
+  width: 100%;
+  height: 48px;
+  box-sizing: border-box;
+
+  padding: 0 14px;
+
+  background: #faf9f7;
+  border: 1px solid #dedbd5;
+
+  color: #2f2e2b;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  transition: all 0.2s ease;
+}
+
+.auth-field input:focus {
+  background: #ffffff;
+  border-color: #aaa59d;
+}
+
+/* BUTTON */
+
+.auth-submit {
+  width: 100%;
+  height: 50px;
+
+  margin-top: 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  background: #2f2e2b;
+  border: 1px solid #2f2e2b;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.auth-submit:hover {
+  background: #45433f;
+  border-color: #45433f;
+  transform: translateY(-1px);
+}
+
+.auth-submit span {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+/* SWITCH */
+
+.auth-switch {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+
+  margin-top: 27px;
+  padding-top: 24px;
+
+  border-top: 1px solid #ece9e5;
+
+  color: #99958e;
+
+  font-size: 11px;
+}
+
+.auth-switch a {
+  color: #4c4944;
+
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+/* BACK */
+
+.auth-back {
+  margin-top: 24px;
+
+  color: #99958e;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.auth-back:hover {
+  color: #4c4944;
+}
+
+/* ERROR */
+
+.auth-error {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+
+  background: #faf1ef;
+  border: 1px solid #e4c8c2;
+
+  color: #9b6259;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .auth-page {
+    padding: 35px 18px;
+  }
+
+  .auth-card {
+    padding: 35px 25px;
+  }
+
+  .auth-heading h1 {
+    font-size: 36px;
+  }
+
+}
