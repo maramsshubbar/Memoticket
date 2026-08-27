@@ -8,7 +8,6 @@ const newMemory = (req, res) => {
   });
 };
 
-
 console.log('CLOUDINARY TEST:', {
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY ? 'EXISTS' : 'MISSING',
@@ -74,29 +73,28 @@ const update = async (req, res) => {
     return res.status(404).send('Memory not found');
   }
 
+  if (req.file) {
+    req.body.imageUrl = req.file.path;
+  }
+
   await Memory.findByIdAndUpdate(req.params.id, req.body);
 
   res.redirect(`/collections/${req.params.collectionId}`);
 };
-
 const deleteMemory = async (req, res) => {
   const memory = await Memory.findOne({
     _id: req.params.id,
-  }).populate('collection');
+    user: req.session.user._id,
+  });
 
-  if (
-    !memory ||
-    memory.collection.user.toString() !== req.session.user._id.toString()
-  ) {
+  if (!memory) {
     return res.status(404).send('Memory not found');
   }
 
   await Memory.findByIdAndDelete(req.params.id);
 
-  res.redirect(`/collections/${req.params.collectionId}`);
+  res.redirect('/memories');
 };
-
-
 
 const index = async (req, res) => {
   try {
@@ -114,9 +112,6 @@ const index = async (req, res) => {
     res.status(500).send(error.message);
   }
 };
-
-
-
 
 module.exports = {
   new: newMemory,
