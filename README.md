@@ -1,4 +1,4 @@
-# Memoticket 🎟️
+# Memoticket
 
 ## Overview
 
