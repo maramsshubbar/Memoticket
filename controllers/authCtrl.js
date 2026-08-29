@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
 
@@ -9,6 +8,7 @@ const signup = async (req, res) => {
     error: null,
   });
 };
+
 const register = async (req, res) => {
   try {
     const userInDatabase = await User.findOne({
@@ -42,11 +42,9 @@ const register = async (req, res) => {
     };
 
     req.session.save(() => {
-  res.redirect('/collections');
-});
+      res.redirect('/collections');
+    });
   } catch (err) {
-    console.log(err);
-
     res.render('auth/sign-up.ejs', {
       error: 'Something went wrong. Please try again.',
     });
@@ -60,13 +58,9 @@ const signin = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  console.log('LOGIN BODY:', req.body);
-
   const userInDatabase = await User.findOne({
     username: req.body.username,
   });
-
-  console.log('USER FOUND:', userInDatabase);
 
   if (!userInDatabase) {
     return res.render('auth/sign-in.ejs', {
@@ -78,8 +72,6 @@ const login = async (req, res) => {
     req.body.password,
     userInDatabase.password
   );
-
-  console.log('PASSWORD MATCH:', passwordMatch);
 
   if (!passwordMatch) {
     return res.render('auth/sign-in.ejs', {

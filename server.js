@@ -10,7 +10,6 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Middleware
 const session = require('express-session');
 const MongoStore = require('connect-mongo').MongoStore;
 const methodOverride = require('method-override');
@@ -18,22 +17,18 @@ const morgan = require('morgan');
 const isSignedIn = require('./middleware/isSignedIn');
 const addUserToViews = require('./middleware/addUserToViews');
 
-// Routers
 const authRouter = require('./routes/authRouter');
 const pagesRouter = require('./routes/pagesRouter');
 const collectionsRouter = require('./routes/collectionsRouter');
 const memoriesRouter = require('./routes/memoriesRouter');
-// Set the port from environment variable or default to 3000
+
 const port = process.env.PORT ? process.env.PORT : '3000';
 
-// MIDDLEWARE
 app.use(express.static(path.join(__dirname, 'public')));
-// Middleware to parse URL-encoded data from forms
 app.use(express.urlencoded({ extended: false }));
-// Middleware for using HTTP verbs such as PUT or DELETE
 app.use(methodOverride('_method'));
-// Morgan for logging HTTP requests
 app.use(morgan('dev'));
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -42,22 +37,19 @@ app.use(
     store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
   })
 );
+
 app.use(addUserToViews);
 
-// ROUTES
 app.use('', pagesRouter);
 app.use('/auth', authRouter);
 
-// Customer middleware
 app.use(isSignedIn);
 
 app.use('/collections', collectionsRouter);
-
 app.use('/collections/:collectionId/memories', memoriesRouter);
+
 app.get('/protected', async (req, res) => {
   res.send(`You are logged in as ${req.session.user.username}`);
 });
 
-app.listen(port, () => {
-  console.log(`The express app is ready on port ${port}!`);
-});
+app.listen(port);
