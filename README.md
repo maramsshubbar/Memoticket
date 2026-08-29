@@ -123,13 +123,12 @@ Guests cannot access functionality that allows them to:
 
 [Memoticket](https://memoticket.onrender.com)
 
-### GitHub Repository
-
-[Memoticket GitHub Repository](https://github.com/maramsshubbar/Memoticket.git)
-
 ### Planning Materials
 
-The project was planned using an ERD and wireframes before development.
+The project was planned using an ERD and wireframe before development.
+
+* [ERD](public/images/erd.png)
+* [Wireframe](public/images/wireframe.png)
 
 #### ERD
 
@@ -540,8 +539,6 @@ Memoticket is deployed online using **Render**.
 
 ### Render Configuration
 
-The Render Web Service is connected to the project's GitHub repository.
-
 **Build Command:**
 
 ```bash
@@ -588,10 +585,6 @@ Render
           │
           └── Cloudinary
 ```
-
-### Deployed Application
-
-[Memoticket Live App](https://memoticket.onrender.com)
 
 ---
 
@@ -655,19 +648,3 @@ Through this project, I learned how to:
 * Manage environment variables.
 * Use Git and GitHub for version control.
 * Deploy a full-stack application using Render.
-
----
-
-## Author
-
-**Maram**
-
-Software Engineering Student
-
-Built as a full-stack web development project.
-
----
-
-## License
-
-This project was created for educational purposes.
