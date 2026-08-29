@@ -1,5 +1,9 @@
 # Memoticket
 
+<p align="center">
+  <img src="public/images/logo.png" alt="Memoticket Logo" width="180">
+</p>
+
 ## Overview
 
 **Memoticket** is a full-stack web application for saving and organizing special memories in a simple and meaningful way.
@@ -9,16 +13,6 @@ The idea behind Memoticket is to turn important moments into digital tickets tha
 Users can create collections and add memories to each collection with details such as the title, date, location, category, rating, description, ticket number, and image.
 
 I built Memoticket to practice building a complete full-stack application and to apply what I learned about Express, MongoDB, authentication, CRUD functionality, RESTful routing, and deployment.
-
----
-
-## Logo
-
-<p align="center">
-  <img src="public/images/logo.png" alt="Memoticket Logo" width="250">
-</p>
-
----
 
 ## Features
 
@@ -79,7 +73,19 @@ Guests cannot access functionality that allows them to:
 * Update memories
 * Delete memories
 
----
+## Screenshots
+
+### Collections Page
+
+<p align="center">
+  <img src="public/images/Screenshot1.png" alt="Memoticket Collections Page" width="800">
+</p>
+
+### Memories Page
+
+<p align="center">
+  <img src="public/images/Screenshot2.png" alt="Memoticket Memories Page" width="800">
+</p>
 
 ## User Stories
 
@@ -115,8 +121,6 @@ Guests cannot access functionality that allows them to:
 * As a user, I want my memories and collections to be private so that other users cannot change my data.
 * As a guest, I should not be able to create, edit, or delete collections and memories.
 
----
-
 ## Getting Started
 
 ### Live Application
@@ -125,18 +129,19 @@ Guests cannot access functionality that allows them to:
 
 ### Planning Materials
 
-The project was planned using an ERD and wireframe before development.
-
+The application was planned before development using an ERD and wireframe.
 
 #### ERD
 
-![Memoticket ERD](public/images/erd.png)
+<p align="center">
+  <img src="public/images/erd.png" alt="Memoticket ERD" width="800">
+</p>
 
 #### Wireframe
 
-![Memoticket Wireframe](public/images/wireframe.png)
-
----
+<p align="center">
+  <img src="public/images/wireframe.png" alt="Memoticket Wireframe" width="800">
+</p>
 
 ## How to Use
 
@@ -177,8 +182,6 @@ You can add:
 ### 5. Manage Your Memories
 
 View your memories, edit their details, upload or update images, or delete memories when needed.
-
----
 
 ## Technologies Used
 
@@ -224,8 +227,6 @@ View your memories, edit their details, upload or update images, or delete memor
 
 * Render
 
----
-
 ## Project Structure
 
 ```text
@@ -252,6 +253,8 @@ Memoticket/
 ├── public/
 │   ├── images/
 │   │   ├── logo.png
+│   │   ├── Screenshot1.png
+│   │   ├── Screenshot2.png
 │   │   ├── erd.png
 │   │   └── wireframe.png
 │   │
@@ -278,8 +281,6 @@ Memoticket/
 └── server.js
 ```
 
----
-
 ## Data Models
 
 ### User
@@ -289,6 +290,7 @@ The User model stores authentication information for each account.
 ```text
 User
 ├── username
+├── email
 └── password
 ```
 
@@ -324,8 +326,6 @@ Memory
 └── updatedAt
 ```
 
----
-
 ## Relationships
 
 The application uses relationships between its data entities.
@@ -344,15 +344,13 @@ A user can create multiple collections, and each collection can contain multiple
 
 Both collections and memories are associated with the user who created them.
 
----
-
 ## Authentication and Authorization
 
 Memoticket uses **session-based authentication**.
 
 When a user signs in, a session is created and used to identify the signed-in user while they navigate through the application.
 
-Authorization is implemented to protect actions that modify application data.
+Authorization protects actions that modify application data.
 
 Guests cannot:
 
@@ -364,8 +362,6 @@ Guests cannot:
 * Delete memories
 
 Users can only manage data associated with their own account.
-
----
 
 ## CRUD Functionality
 
@@ -402,8 +398,6 @@ Users can:
 * Delete collections
 * Delete memories
 
----
-
 ## RESTful Routing
 
 The application follows RESTful routing conventions for its resources.
@@ -417,8 +411,6 @@ Collections and memories use resource-based routes with HTTP methods including:
 
 Method Override is used where necessary to support update and delete requests from HTML forms.
 
----
-
 ## EJS Templates
 
 Memoticket uses **EJS templates** to render dynamic pages.
@@ -430,8 +422,6 @@ EJS is used to:
 * Show different navigation options depending on authentication status.
 * Display dynamic data from MongoDB.
 * Reuse partial templates.
-
----
 
 ## MVC Architecture
 
@@ -453,8 +443,6 @@ Controllers contain the application's logic for handling requests and interactin
 
 Routers define the application's RESTful endpoints and connect requests to the appropriate controllers.
 
----
-
 ## Environment Variables
 
 The application uses environment variables to store sensitive configuration.
@@ -470,8 +458,6 @@ CLOUDINARY_API_SECRET=
 ```
 
 Sensitive values are stored in environment variables and are not included in the GitHub repository.
-
----
 
 ## Running Locally
 
@@ -523,13 +509,11 @@ http://localhost:3000
 npm start
 ```
 
-The production start command is:
+The production start command runs:
 
 ```text
 node server.js
 ```
-
----
 
 ## Deployment
 
@@ -549,13 +533,11 @@ npm ci
 npm start
 ```
 
-The application uses the Render-provided `PORT` environment variable:
+The application uses the `PORT` environment variable provided by Render and defaults to port `3000` when running locally.
 
 ```javascript
 const port = process.env.PORT ? process.env.PORT : '3000';
 ```
-
-This allows the application to use port `3000` locally and the port provided by Render when deployed.
 
 ### Deployment Services
 
@@ -584,11 +566,9 @@ Render
           └── Cloudinary
 ```
 
----
-
 ## Attributions
 
-Memoticket was developed using the following libraries, frameworks, and external services:
+Memoticket uses the following open-source libraries and external services:
 
 * Node.js
 * Express.js
@@ -604,8 +584,6 @@ Memoticket was developed using the following libraries, frameworks, and external
 * Render
 
 No external code or assets requiring additional attribution were intentionally used beyond the libraries and services listed above.
-
----
 
 ## Next Steps
 
@@ -624,8 +602,6 @@ Possible future improvements for Memoticket include:
 * Add stronger validation and error handling.
 * Add pagination for large collections.
 * Add additional ways to organize and display memories.
-
----
 
 ## Learning Outcomes
 
