@@ -127,8 +127,6 @@ Guests cannot access functionality that allows them to:
 
 The project was planned using an ERD and wireframe before development.
 
-* [ERD](public/images/erd.png)
-* [Wireframe](public/images/wireframe.png)
 
 #### ERD
 
