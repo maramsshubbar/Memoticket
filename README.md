@@ -137,11 +137,6 @@ The application was planned before development using an ERD and wireframe.
   <img src="public/images/erd.png" alt="Memoticket ERD" width="800">
 </p>
 
-#### Wireframe
-
-<p align="center">
-  <img src="public/images/wireframe.png" alt="Memoticket Wireframe" width="800">
-</p>
 
 ## How to Use
 
