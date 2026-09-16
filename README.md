@@ -121,11 +121,6 @@ Guests cannot access functionality that allows them to:
 * As a user, I want my memories and collections to be private so that other users cannot change my data.
 * As a guest, I should not be able to create, edit, or delete collections and memories.
 
-## Getting Started
-
-### Live Application
-
-[Memoticket](https://memoticket.onrender.com)
 
 ### Planning Materials
 
@@ -617,3 +612,7 @@ Through this project, I learned how to:
 * Manage environment variables.
 * Use Git and GitHub for version control.
 * Deploy a full-stack application using Render.
+
+### Live Application
+
+[Memoticket](https://memoticket.onrender.com)
